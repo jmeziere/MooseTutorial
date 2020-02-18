@@ -1,4 +1,4 @@
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 
-class FirstScreen(Screen):
+class MooseCodingScreen(Screen):
     pass

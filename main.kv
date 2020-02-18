@@ -1,9 +1,11 @@
 #:import NoTransition kivy.uix.screenmanager.NoTransition
-#:include FirstScreen.kv
-#:include SecondScreen.kv
+#:include InstallationScreen.kv
+#:include MathTutorialScreen.kv
+#:include InputFileScreen.kv
+#:include MooseCodingScreen.kv
 ScreenManager:
     transition: NoTransition()
-    Screen:
+    MainScreen:
         name: "main_screen"
         BoxLayout:
             orientation: 'vertical'
@@ -25,20 +27,26 @@ ScreenManager:
                         height: 30
                         size_hint_y: None
                         text: "Installation"
+                        on_release: app.root.current = 'installation_screen'
                     Button:
                         background_color: 0,0,0,1
                         height: 30
                         size_hint_y: None
                         text: "Math"
+                        on_release: app.root.current = 'math_tutorial'
                     Button:
                         background_color: 0,0,0,1
                         height: 30
                         size_hint_y: None
                         text: "Input Files"
+                        on_release: app.root.current = 'input_files'
                     Button:
                         background_color: 0,0,0,1
                         height: 30
                         size_hint_y: None
                         text: "MOOSE Coding"
-    FirstScreen:
-    SecondScreen:
+                        on_release: app.root.current = 'moose_coding'
+    InstallationScreen:
+    MathTutorialScreen:
+    InputFileScreen:
+    MooseCodingScreen:
