@@ -1,0 +1,16 @@
+<SecondScreen@Screen>:
+    name: 'screen_2'
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'second screen!'
+            font_size: 30
+        Image:
+            source: 'colours2.png'
+            allow_stretch: True
+            keep_ratio: False
+        BoxLayout:
+            Button:
+                text: 'goto first screen'
+                font_size: 30
+                on_release: app.root.current = 'screen_1'
