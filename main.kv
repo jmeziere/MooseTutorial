@@ -1,6 +1,6 @@
 #:include InnerScreen.kv
+#:include InstallationDecideScreen.kv
 #:include MathDecideScreen.kv
-#:include InputDecideScreen.kv
 #:include MooseDecideScreen.kv
 #:import NoTransition kivy.uix.screenmanager.NoTransition
 ScreenManager:
@@ -34,28 +34,26 @@ ScreenManager:
                         on_press: input_file_button.background_color = [0,0,0,1]
                         on_press: moose_coding_button.background_color = [0,0,0,1]
                         on_press: sub_sections.width = 0
+                        on_release: main_button.background_color = [0,0,0,1]
                     Button:
                         id: installation_button
                         background_color: 0,0,0,1
                         height: 30
                         size_hint_y: None
                         text: 'Installation'
-                        on_press: main_button.background_color = [0,0,0,1]
-                        on_press: installation_button.background_color = [1,1,1,1]
+                        on_press: installation_button.background_color = [1,1,1,1] if installation_button.background_color == [0,0,0,1] else [0,0,0,1]
                         on_press: math_button.background_color = [0,0,0,1]
-                        on_press: input_file_button.background_color = [0,0,0,1]
                         on_press: moose_coding_button.background_color = [0,0,0,1]
-                        on_press: sub_sections.width = 0
+                        on_press: sub_section_manager.current = 'installation_decide_screen'
+                        on_press: sub_sections.width = 100  if installation_button.background_color == [0,0,0,1] else 0
                     Button:
                         id: math_button
                         background_color: 0,0,0,1
                         height: 30
                         size_hint_y: None
                         text: 'Math'
-                        on_press: main_button.background_color = [0,0,0,1]
                         on_press: installation_button.background_color = [0,0,0,1]
                         on_press: math_button.background_color = [1,1,1,1] if math_button.background_color == [0,0,0,1] else [0,0,0,1]
-                        on_press: input_file_button.background_color = [0,0,0,1]
                         on_press: moose_coding_button.background_color = [0,0,0,1]
                         on_press: sub_section_manager.current = 'math_decide_screen'
                         on_press: sub_sections.width = 200  if math_button.background_color == [0,0,0,1] else 0
@@ -65,26 +63,23 @@ ScreenManager:
                         height: 30
                         size_hint_y: None
                         text: 'Input Files'
-                        on_press: main_button.background_color = [0,0,0,1]
                         on_press: installation_button.background_color = [0,0,0,1]
                         on_press: math_button.background_color = [0,0,0,1]
                         on_press: input_file_button.background_color = [1,1,1,1]
                         on_press: moose_coding_button.background_color = [0,0,0,1]
-                        on_press: sub_section_manager.current = 'input_decide_screen'
-                        on_press: sub_sections.width = 150
+                        on_press: sub_sections.width = 0
+                        on_release: input_file_button.background_color = [0,0,0,1]
                     Button:
                         id: moose_coding_button
                         background_color: 0,0,0,1
                         height: 30
                         size_hint_y: None
                         text: 'MOOSE Coding'
-                        on_press: main_button.background_color = [0,0,0,1]
                         on_press: installation_button.background_color = [0,0,0,1]
                         on_press: math_button.background_color = [0,0,0,1]
-                        on_press: input_file_button.background_color = [0,0,0,1]
-                        on_press: moose_coding_button.background_color = [1,1,1,1]
+                        on_press: moose_coding_button.background_color = [1,1,1,1] if moose_coding_button.background_color == [0,0,0,1] else [0,0,0,1]
                         on_press: sub_section_manager.current = 'moose_decide_screen'
-                        on_press:sub_sections.width = 150
+                        on_press: sub_sections.width = 220  if moose_coding_button.background_color == [0,0,0,1] else 0
                 BoxLayout:
                     id: sub_sections
                     size_hint_x: None
@@ -92,8 +87,8 @@ ScreenManager:
                     ScreenManager:
                         transition: NoTransition()
                         id: sub_section_manager
+                        InstallationDecideScreen:
                         MathDecideScreen:
-                        InputDecideScreen:
                         MooseDecideScreen:
                 BoxLayout:
                     ScreenManager:

@@ -1,0 +1,27 @@
+<InstallationDecideScreen@Screen>
+    name: 'installation_decide_screen'
+    id: installation_decide_screen
+    StackLayout:
+        orientation: 'tb-lr'
+        size_hint_x: None
+        width: 100
+        Button:
+            id: linux_button
+            size_hint_y: None
+            height: 30
+            text: 'Linux'
+            background_color: 0,0,0,1
+            on_press: linux_button.background_color = [1,1,1,1]
+            on_release: App.get_running_app().root.ids.sub_sections.width = 0
+            on_release: App.get_running_app().root.ids.installation_button.background_color = [0,0,0,1]
+            on_release: linux_button.background_color = [0,0,0,1]
+        Button:
+            id: mac_button
+            size_hint_y: None
+            height: 30
+            text: 'mac'
+            background_color: 0,0,0,1
+            on_press: mac_button.background_color = [1,1,1,1]
+            on_release: App.get_running_app().root.ids.sub_sections.width = 0
+            on_release: App.get_running_app().root.ids.installation_button.background_color = [0,0,0,1]
+            on_release: mac_button.background_color = [0,0,0,1]
