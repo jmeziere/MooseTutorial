@@ -2,6 +2,7 @@
 #:include InstallationDecideScreen.kv
 #:include MathDecideScreen.kv
 #:include MooseDecideScreen.kv
+#:include MainTutorial.kv
 #:import NoTransition kivy.uix.screenmanager.NoTransition
 ScreenManager:
     MainScreen:
@@ -92,6 +93,12 @@ ScreenManager:
                         MooseDecideScreen:
                 BoxLayout:
                     ScreenManager:
+                        id: tutorial_manager
                         transition: NoTransition()
-                        id: other_manager
+                        # Moose Introduction
+                        InitScreen:
+                        AboutInl:
+                        AboutMoose:
+                        AboutTutorial:
+
                         InnerScreen:

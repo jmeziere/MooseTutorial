@@ -9,7 +9,17 @@
         do_scroll_x: False
         StackLayout:
             size_hint_y: None
-            height: 975
+            height: 1000
+            Button:
+                id: similarities_button
+                size_hint_y: None
+                height: 30
+                text: 'Similarities Between Files'
+                background_color: 0,0,0,1
+                on_press: similarities_button.background_color = [1,1,1,1]
+                on_release: App.get_running_app().root.ids.sub_sections.width = 0
+                on_release: App.get_running_app().root.ids.moose_coding_button.background_color = [0,0,0,1]
+                on_release: similarities_button.background_color = [0,0,0,1]
             Button:
                 id: action_button
                 size_hint_y: None

@@ -6,11 +6,6 @@ from kivy.uix.boxlayout import BoxLayout
 
 from kivy.uix.screenmanager import ScreenManager, Screen
 
-import time
-import random
-
-
-
 class MainScreen(Screen):
     pass
 

@@ -1,0 +1,5 @@
+When first learning MOOSE, it is important to keep in mind the purpose behind it. MOOSE stands for Multi-Physics Object Oriented Simulation Environment, and we will go through this piece by piece until we have a firm understanding of what MOOSE is. Let's start with the basics.
+
+Physics: Physics has the power to describe many physical phenomena with extraordinary accuracy. Many times, these phenomena are represented through mathematical formulas. Perhaps the most intuitive type of mathematical formula used is the partial differential equation. If you are unfamiliar with the term, I would suggest moving to the math tutorial section for a minute or two to discover what this means. At it's base, MOOSE is a partial differential equation solver, using a numerical method called the finite element method, which is also discussed in the math tutorial section. It is vitally important to see MOOSE as a tool to do this, and only this. 
+
+Multi-Physics: While physics has the power to describe much of the world around us, it is often hard to describe too many things around us without getting into a great deal of complexity. 
