@@ -1,8 +1,8 @@
-#:include InnerScreen.kv
-#:include InstallationDecideScreen.kv
-#:include MathDecideScreen.kv
-#:include MooseDecideScreen.kv
-#:include MainTutorial.kv
+#:include Installation/InstallationDecideScreen.kv
+#:include Prerequisite/PrerequisiteDecideScreen.kv
+#:include MooseSystems/MooseDecideScreen.kv
+#:include Recurring/RecurringThemesScreen.kv
+#:include Main/MainTutorial.kv
 #:import NoTransition kivy.uix.screenmanager.NoTransition
 ScreenManager:
     MainScreen:
@@ -36,6 +36,7 @@ ScreenManager:
                         on_press: moose_systems_button.background_color = [0,0,0,1]
                         on_press: sub_sections.width = 0
                         on_release: main_button.background_color = [0,0,0,1]
+                        on_release: tutorial_manager.current = 'init_screen'
                     Button:
                         id: installation_button
                         background_color: 0,0,0,1
@@ -44,6 +45,7 @@ ScreenManager:
                         text: 'Installation'
                         on_press: installation_button.background_color = [1,1,1,1] if installation_button.background_color == [0,0,0,1] else [0,0,0,1]
                         on_press: prerequisite_knowledge_button.background_color = [0,0,0,1]
+                        on_press: recurring_themes_button.background_color = [0,0,0,1]
                         on_press: moose_systems_button.background_color = [0,0,0,1]
                         on_press: sub_section_manager.current = 'installation_decide_screen'
                         on_press: sub_sections.width = 100  if installation_button.background_color == [0,0,0,1] else 0
@@ -55,8 +57,9 @@ ScreenManager:
                         text: 'Prerequisite Knowledge'
                         on_press: installation_button.background_color = [0,0,0,1]
                         on_press: prerequisite_knowledge_button.background_color = [1,1,1,1] if prerequisite_knowledge_button.background_color == [0,0,0,1] else [0,0,0,1]
+                        on_press: recurring_themes_button.background_color = [0,0,0,1]
                         on_press: moose_systems_button.background_color = [0,0,0,1]
-                        on_press: sub_section_manager.current = 'math_decide_screen'
+                        on_press: sub_section_manager.current = 'prerequisite_decide_screen'
                         on_press: sub_sections.width = 200  if prerequisite_knowledge_button.background_color == [0,0,0,1] else 0
                     Button:
                         id: recurring_themes_button
@@ -66,10 +69,10 @@ ScreenManager:
                         text: 'Recurring Themes'
                         on_press: installation_button.background_color = [0,0,0,1]
                         on_press: prerequisite_knowledge_button.background_color = [0,0,0,1]
-                        on_press: recurring_themes_button.background_color = [1,1,1,1]
+                        on_press: recurring_themes_button.background_color = [1,1,1,1] if recurring_themes_button.background_color == [0,0,0,1] else [0,0,0,1]
                         on_press: moose_systems_button.background_color = [0,0,0,1]
-                        on_press: sub_sections.width = 0
-                        on_release: recurring_themes_button.background_color = [0,0,0,1]
+                        on_press: sub_section_manager.current = 'recurring_themes_screen'
+                        on_press: sub_sections.width = 200  if recurring_themes_button.background_color == [0,0,0,1] else 0
                     Button:
                         id: moose_systems_button
                         background_color: 0,0,0,1
@@ -78,6 +81,7 @@ ScreenManager:
                         text: 'MOOSE Systems'
                         on_press: installation_button.background_color = [0,0,0,1]
                         on_press: prerequisite_knowledge_button.background_color = [0,0,0,1]
+                        on_press: recurring_themes_button.background_color = [0,0,0,1]
                         on_press: moose_systems_button.background_color = [1,1,1,1] if moose_systems_button.background_color == [0,0,0,1] else [0,0,0,1]
                         on_press: sub_section_manager.current = 'moose_decide_screen'
                         on_press: sub_sections.width = 220  if moose_systems_button.background_color == [0,0,0,1] else 0
@@ -89,8 +93,9 @@ ScreenManager:
                         transition: NoTransition()
                         id: sub_section_manager
                         InstallationDecideScreen:
-                        MathDecideScreen:
+                        PrerequisiteDecideScreen:
                         MooseDecideScreen:
+                        RecurringThemesScreen:
                 BoxLayout:
                     ScreenManager:
                         id: tutorial_manager
@@ -100,5 +105,9 @@ ScreenManager:
                         AboutInl:
                         AboutMoose:
                         AboutTutorial:
-
-                        InnerScreen:
+                        NeedsWork:
+<NeedsWork@Screen>
+    name: 'needs_work'
+    id: needs_work
+    Label:
+        text: 'This page needs development!'

@@ -15,6 +15,7 @@
             on_release: App.get_running_app().root.ids.sub_sections.width = 0
             on_release: App.get_running_app().root.ids.installation_button.background_color = [0,0,0,1]
             on_release: linux_button.background_color = [0,0,0,1]
+            on_release: App.get_running_app().root.ids.tutorial_manager.current = 'needs_work'
         Button:
             id: mac_button
             size_hint_y: None
@@ -25,3 +26,4 @@
             on_release: App.get_running_app().root.ids.sub_sections.width = 0
             on_release: App.get_running_app().root.ids.installation_button.background_color = [0,0,0,1]
             on_release: mac_button.background_color = [0,0,0,1]
+            on_release: App.get_running_app().root.ids.tutorial_manager.current = 'needs_work'
