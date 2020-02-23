@@ -15,7 +15,8 @@
             text: 'Previous'
             background_color: 0,0,0,1
     Label:
-        text: 'This page has nothing on it :('
+        text: 'Welcome To MOOSE!'
+        font_size: 50
 
 <AboutInl@Screen>
     name: 'about_inl'
@@ -38,38 +39,57 @@
 
 <AboutMoose@Screen>
     name: 'about_moose'
-    StackLayout:
-        orientation: 'rl-bt'
-        Button:
-            size_hint: None, None
+    id: about_moose
+    BoxLayout:
+        orientation: 'vertical'
+        ScrollView:
+            Label:
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+                text: about_moose.getAboutMooseString()
+        StackLayout:
+            orientation: 'rl-bt'
+            size_hint_y: None
             height: 50
-            width: 100
-            text: 'Next'
-            on_release: App.get_running_app().root.ids.tutorial_manager.current = 'about_tutorial'
-        Button:
-            size_hint: None, None
-            height: 50
-            width: 100
-            text: 'Previous'
-            on_release: App.get_running_app().root.ids.tutorial_manager.current = 'about_inl'
-    Label:
-        text: 'This page has nothing on it :('
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Next'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'about_tutorial'
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Previous'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'about_inl'
+
 
 <AboutTutorial@Screen>
     name: 'about_tutorial'
-    StackLayout:
-        orientation: 'rl-bt'
-        Button:
-            size_hint: None, None
+    id: about_tutorial
+    BoxLayout:
+        orientation: 'vertical'
+        ScrollView:
+            Label:
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+                text: about_tutorial.getAboutTutorialString()
+        StackLayout:
+            orientation: 'rl-bt'
+            size_hint_y: None
             height: 50
-            width: 100
-            text: 'Next'
-            background_color: 0,0,0,1
-        Button:
-            size_hint: None, None
-            height: 50
-            width: 100
-            text: 'Previous'
-            on_release: App.get_running_app().root.ids.tutorial_manager.current = 'about_moose'
-    Label:
-        text: 'This page has nothing on it :('
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Next'
+                background_color: 0,0,0,1
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Previous'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'about_moose'

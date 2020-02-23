@@ -1,0 +1,47 @@
+It should go without saying, but we are going to say it anyways. Our main focus while making this tutorial was you. In order to give you the best experience we are able to, we are designing the app with two simple rules that we are going to follow. We're going to tell them to you here so that you have an idea of what to expect going forward.
+
+1. The sub-tutorials will all follow the exact same format.
+
+For each of the main tutorials (Prerequisite Knowledge, Recurring Themes, & MOOSE Systems), we will make sure that the tutorials are all set out the same way. This is intended to keep you from guessing what they are about and to develop some consistency. As you keep going through tutorials, things will get easier and easier since the layout and content will be similar. We will present the layout for both the math sections, the recurring themes sections and the MOOSE systems sections.
+
+Prerequisite Knowledge:
+
+In the prerequisite knowledge section, there will be three part to each tutorial. Because this is the prerequisite section, there will not be as much material dedicated to it. This does not mean we are leaving you out in the cold to figure it all out on your own, as we will explain through our description of each of the parts of the tutorial.
+
+The first part of the tutorial will be an overview of the subject and an explanation of why we care about it in MOOSE. In addition to this, we will finish by describing how it is used in MOOSE as well. The purpose of this is to give more of a working knowledge of the subject rather than a full understanding of the theory behind it. There will be some information given about this usually, but nothing complete.
+
+The second part will be an example of how this topic is used in MOOSE. Again, we will forego much of the explanation of any deeper understanding of the subject, focusing only on the how and ignoring the who, what, where, when, and why. This should be sufficient to get you to be able to do the "prerequisites of MOOSE" without really understanding why it all works.
+
+For those that really have a thirst for all of the other w's, we will provide some additional reading that we have found helpful in understanding these topics. This will be the third and final section. We really do hope that you take the time to go and understand these topics, as they are quite fascinating. We will add links to papers, books, and videos in the hopes that one of these mediums will connect with you strongly and give you a great learning opportunity.
+
+Recurring Themes:
+
+In the recurring themes section, there will be four parts to each tutorial. The purpose of these tutorials is to cover material that is general to nearly all of the sections of MOOSE systems. Perhaps this will be expanded in the future, but for now, this is it's only purpose.
+
+The first part will again be an overview of the material. These will go in depth into the subject, attempting to cover the purpose of the material, how it works, and where it fits into the bigger picture. We want this to be a one-stop shop for information on this particular subject. 
+
+The second part will go over an example. This will be a relatively simple example that allows you to get a basic understanding of how it works. 
+
+The third part will present a problem that is designed to extend the earlier learning slightly. This is intended to make you think just a little, but not too much. We're not going to make it impossible, but will require you to use a little logic and extrapolation on the knowledge we've presented so far.
+
+The final part will present the solution to the practice problem that was given just prior. 
+
+MOOSE Systems:
+
+Here, we will give parts slides in total.
+
+The first part will also give an overview. Similar to recurring themes, this will endeavor to be a concise, but complete guide to the topic and it's purpose. We will also include how it fits in the overall picture of MOOSE and solving a partial differential equation.
+
+The second part will cover any member variables that have a specific purpose. Because the code is highly object oriented, this member variables have been defined with a specific purpose in mind, and are supposed to be used that way. If they are unused or misused, this can cause the program to give very incorrect answers. Many times, this is the most difficult part of writing new code in MOOSE, since it can be very hard to know exactly what is available to use.
+
+The third part will cover member function that have a specific purpose. These will be virtual functions that are declared in parent classes that have a specific purpose in all child classes. Again, misusing or not using these functions can cause serious side effects.
+
+The fourth part will give a simple example. This will include a source file, a header file, and an input file. Included will descriptions of each part of the file.
+
+The fifth part will be a problem similar to the recurring themes problem. This will also be meant to stretch your knowledge slightly without making it impossible to solve. 
+
+The final part will be an answer to the problem presented in the previous part.
+
+2. Further devlopment will follow rule one.
+
+We welcome development from outside sources, and actually sort of expect it. What we hope is that you come to us and learn some things, but when you go to a section in, for example, MOOSE systems, and there is nothing there, we hope you will take the time to learn about it and think up each of the six parts of that section. We will have a place where you just type out your ideas into premade .txt file and then the program will do the rest. From there, people can benefit from your ideas, just as you have benefited from ours (at least we like to think you'll have benefited from ours). This will ensure that, even though your voice will be in your tutorial, it will still follow the format that we have designated out.

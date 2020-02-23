@@ -2,7 +2,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.properties import ListProperty
 from kivy.uix.boxlayout import BoxLayout
-
+from MainTutorial import AboutMoose
 
 from kivy.uix.screenmanager import ScreenManager, Screen
 
