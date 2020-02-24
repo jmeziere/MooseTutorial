@@ -1,0 +1,186 @@
+<KernelsOverview@Screen>
+    name: 'kernels_overview'
+    id: kernels_overview
+    BoxLayout:
+        orientation: 'vertical'
+        ScrollView:
+            Label:
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+                font_name: "ASANA.TTC"
+                text: u"\u2196"
+        StackLayout:
+            orientation: 'rl-bt'
+            size_hint_y: None
+            height: 50
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Next'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_member_variables'
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Previous'
+                background_color: 0,0,0,1
+
+<KernelsMemberVariables@Screen>
+    name: 'kernels_member_variables'
+    id: kernels_member_variables
+    BoxLayout:
+        orientation: 'vertical'
+        ScrollView:
+            Label:
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+                text: "Member Variables"
+        StackLayout:
+            orientation: 'rl-bt'
+            size_hint_y: None
+            height: 50
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Next'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_member_functions'
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Previous'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_overview'
+
+<KernelsMemberFunctions@Screen>
+    name: 'kernels_member_functions'
+    id: kernels_member_functions
+    BoxLayout:
+        orientation: 'vertical'
+        ScrollView:
+            Label:
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+                text: "Member Functions"
+        StackLayout:
+            orientation: 'rl-bt'
+            size_hint_y: None
+            height: 50
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Next'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_example'
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Previous'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_member_variables'
+
+<KernelsExample@Screen>
+    name: 'kernels_example'
+    id: kernels_example
+    BoxLayout:
+        orientation: 'vertical'
+        ScrollView:
+            Label:
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+                text: "Example"
+        StackLayout:
+            orientation: 'rl-bt'
+            size_hint_y: None
+            height: 50
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Next'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_problem'
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Previous'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_member_functions'
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Run\nSimulation'
+                halign: 'center'
+
+<KernelsProblem@Screen>
+    name: 'kernels_problem'
+    id: kernels_problem
+    BoxLayout:
+        orientation: 'vertical'
+        ScrollView:
+            Label:
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+                text: "Problem"
+        StackLayout:
+            orientation: 'rl-bt'
+            size_hint_y: None
+            height: 50
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Next'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_solution'
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Previous'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_example'
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Run\nSimulation'
+                halign: 'center'
+
+<KernelsSolution@Screen>
+    name: 'kernels_solution'
+    id: kernels_solution
+    BoxLayout:
+        orientation: 'vertical'
+        ScrollView:
+            Label:
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+                text: "Solution"
+        StackLayout:
+            orientation: 'rl-bt'
+            size_hint_y: None
+            height: 50
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Next'
+                background_color: 0,0,0,1
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Previous'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_problem'
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Run\nSimulation'
+                halign: 'center'

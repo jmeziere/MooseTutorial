@@ -1,3 +1,2 @@
-with open('AboutMoose.txt','r') as file:
-    data = file.read()
-print(data)
+
+print(u"\u2207")

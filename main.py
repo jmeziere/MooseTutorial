@@ -6,6 +6,8 @@ import sys
 
 sys.path.append('Main/')
 from MainTutorial import InitScreen
+sys.path.append('MooseSystems/')
+import MooseDecideScreen
 
 sys.path.append('Installation/')
 
