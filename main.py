@@ -10,6 +10,8 @@ sys.path.append('MooseSystems/')
 import MooseDecideScreen
 
 sys.path.append('Installation/')
+import InstallationDecideScreen
+InstallationDecideScreen.importFiles()
 
 from kivy.uix.screenmanager import ScreenManager, Screen
 

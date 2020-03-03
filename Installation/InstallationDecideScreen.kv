@@ -1,3 +1,5 @@
+#:include Installation/Linux/Mint.kv
+
 <InstallationDecideScreen@Screen>
     name: 'installation_decide_screen'
     id: installation_decide_screen
@@ -5,25 +7,127 @@
         orientation: 'tb-lr'
         size_hint_x: None
         width: 100
-        Button:
-            id: linux_button
-            size_hint_y: None
-            height: 30
+        Label:
+            bold: True
+            underline: True
+            #color: 1,0,0,0
             text: 'Linux'
-            background_color: 0,0,0,1
-            on_press: linux_button.background_color = [1,1,1,1]
-            on_release: App.get_running_app().root.ids.sub_sections.width = 0
-            on_release: App.get_running_app().root.ids.installation_button.background_color = [0,0,0,1]
-            on_release: linux_button.background_color = [0,0,0,1]
-            on_release: App.get_running_app().root.ids.tutorial_manager.current = 'needs_work'
-        Button:
-            id: mac_button
             size_hint_y: None
             height: 30
-            text: 'mac'
+            canvas.before:
+                Color:
+                    rgba: 1,0,0,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+        Button:
+            id: Ubuntu_button
+            size_hint_y: None
+            height: 30
+            text: 'Ubuntu'
             background_color: 0,0,0,1
-            on_press: mac_button.background_color = [1,1,1,1]
+            on_press: Ubuntu_button.background_color = [1,1,1,1]
             on_release: App.get_running_app().root.ids.sub_sections.width = 0
             on_release: App.get_running_app().root.ids.installation_button.background_color = [0,0,0,1]
-            on_release: mac_button.background_color = [0,0,0,1]
+            on_release: Ubuntu_button.background_color = [0,0,0,1]
             on_release: App.get_running_app().root.ids.tutorial_manager.current = 'needs_work'
+        Button:
+            id: Mint_button
+            size_hint_y: None
+            height: 30
+            text: 'Mint'
+            background_color: 0,0,0,1
+            on_press: Mint_button.background_color = [1,1,1,1]
+            on_release: App.get_running_app().root.ids.sub_sections.width = 0
+            on_release: App.get_running_app().root.ids.installation_button.background_color = [0,0,0,1]
+            on_release: Mint_button.background_color = [0,0,0,1]
+            on_release: App.get_running_app().root.ids.tutorial_manager.current = 'Mint'
+
+        Button:
+            id: Fedora_button
+            size_hint_y: None
+            height: 30
+            text: 'Fedora'
+            background_color: 0,0,0,1
+            on_press: Fedora_button.background_color = [1,1,1,1]
+            on_release: App.get_running_app().root.ids.sub_sections.width = 0
+            on_release: App.get_running_app().root.ids.installation_button.background_color = [0,0,0,1]
+            on_release: Fedora_button.background_color = [0,0,0,1]
+            on_release: App.get_running_app().root.ids.tutorial_manager.current = 'needs_work'
+
+        Button:
+            id: OpenSUSE_button
+            size_hint_y: None
+            height: 30
+            text: 'OpenSUSE'
+            background_color: 0,0,0,1
+            on_press: OpenSUSE_button.background_color = [1,1,1,1]
+            on_release: App.get_running_app().root.ids.sub_sections.width = 0
+            on_release: App.get_running_app().root.ids.installation_button.background_color = [0,0,0,1]
+            on_release: OpenSUSE_button.background_color = [0,0,0,1]
+            on_release: App.get_running_app().root.ids.tutorial_manager.current = 'needs_work'
+
+        Button:
+            id: CentOS_button
+            size_hint_y: None
+            height: 30
+            text: 'CentOS'
+            background_color: 0,0,0,1
+            on_press: CentOS_button.background_color = [1,1,1,1]
+            on_release: App.get_running_app().root.ids.sub_sections.width = 0
+            on_release: App.get_running_app().root.ids.installation_button.background_color = [0,0,0,1]
+            on_release: CentOS_button.background_color = [0,0,0,1]
+            on_release: App.get_running_app().root.ids.tutorial_manager.current = 'needs_work'
+
+        Label:
+            bold: True
+            underline: True
+            #color: 1,0,0,0
+            text: 'MacOS'
+            size_hint_y: None
+            height: 30
+            canvas.before:
+                Color:
+                    rgba: 1,0,0,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+
+        Button:
+            id: Catalina_button
+            size_hint_y: None
+            height: 30
+            text: 'Catalina'
+            background_color: 0,0,0,1
+            on_press: Catalina_button.background_color = [1,1,1,1]
+            on_release: App.get_running_app().root.ids.sub_sections.width = 0
+            on_release: App.get_running_app().root.ids.installation_button.background_color = [0,0,0,1]
+            on_release: Catalina_button.background_color = [0,0,0,1]
+            on_release: App.get_running_app().root.ids.tutorial_manager.current = 'needs_work'
+
+        Button:
+            id: Mojave
+            size_hint_y: None
+            height: 30
+            text: 'Mojave'
+            background_color: 0,0,0,1
+            on_press: Mojave_button.background_color = [1,1,1,1]
+            on_release: App.get_running_app().root.ids.sub_sections.width = 0
+            on_release: App.get_running_app().root.ids.installation_button.background_color = [0,0,0,1]
+            on_release: Mojave_button.background_color = [0,0,0,1]
+            on_release: App.get_running_app().root.ids.tutorial_manager.current = 'needs_work'
+
+        Button:
+            id: HighSierra
+            size_hint_y: None
+            height: 30
+            text: 'High Sierra'
+            background_color: 0,0,0,1
+            on_press: HighSierra.background_color = [1,1,1,1]
+            on_release: App.get_running_app().root.ids.sub_sections.width = 0
+            on_release: App.get_running_app().root.ids.installation_button.background_color = [0,0,0,1]
+            on_release: HighSierra_button.background_color = [0,0,0,1]
+            on_release: App.get_running_app().root.ids.tutorial_manager.current = 'needs_work'
+
+
