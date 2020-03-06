@@ -1,3 +1,4 @@
-import sys
-
-sys.path.append('MooseSystems/Kernels/')
+def importFiles():
+    import sys
+    sys.path.append('MooseSystems/Kernels/')
+    import kernels
