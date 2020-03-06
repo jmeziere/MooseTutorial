@@ -12,6 +12,8 @@ import MooseDecideScreen
 MooseDecideScreen.importFiles()
 
 sys.path.append('Installation/')
+import InstallationDecideScreen
+InstallationDecideScreen.importFiles()
 
 from kivy.uix.screenmanager import ScreenManager, Screen
 

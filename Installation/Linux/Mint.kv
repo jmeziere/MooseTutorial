@@ -1,0 +1,21 @@
+<Mint>
+    name: 'Mint'
+    id: 'Mint'
+    Label:
+        text: "Login Password:"
+        pos: 50,450
+        size_hint: (.2,None)
+        height: 50
+    TextInput:
+        password: True
+        id: passw
+        pos: 50,400
+        size_hint: (.2, None)
+        height: 50
+        multiline: False
+    Button:
+        text: "Download MOOSE for Mint19"
+        pos:50 , 300
+        height: 30
+        size_hint: (.2, None)
+        on_release: root.install()
