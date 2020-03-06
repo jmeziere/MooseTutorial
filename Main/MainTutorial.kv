@@ -1,4 +1,4 @@
-<InitScreen@Screen>
+<InitScreen>
     name: 'init_screen'
     StackLayout:
         orientation: 'rl-bt'
@@ -18,7 +18,7 @@
         text: 'Welcome To MOOSE!'
         font_size: 50
 
-<AboutInl@Screen>
+<AboutInl>
     name: 'about_inl'
     StackLayout:
         orientation: 'rl-bt'
@@ -37,7 +37,7 @@
     Label:
         text: 'This page has nothing on it :('
 
-<AboutMoose@Screen>
+<AboutMoose>
     name: 'about_moose'
     id: about_moose
     BoxLayout:
@@ -66,7 +66,7 @@
                 on_release: App.get_running_app().root.ids.tutorial_manager.current = 'about_inl'
 
 
-<AboutTutorial@Screen>
+<AboutTutorial>
     name: 'about_tutorial'
     id: about_tutorial
     BoxLayout:

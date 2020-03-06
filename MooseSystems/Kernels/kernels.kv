@@ -1,15 +1,14 @@
-<KernelsOverview@Screen>
+<KernelsOverview>
     name: 'kernels_overview'
     id: kernels_overview
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
-            Label:
+            BoxLayout:
+                id: tester
+                orientation: 'vertical'
                 size_hint_y: None
-                height: self.texture_size[1]
-                text_size: self.width, None
-                font_name: "ASANA.TTC"
-                text: u"\u2196"
+                height: kernels_overview.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -27,7 +26,7 @@
                 text: 'Previous'
                 background_color: 0,0,0,1
 
-<KernelsMemberVariables@Screen>
+<KernelsMemberVariables>
     name: 'kernels_member_variables'
     id: kernels_member_variables
     BoxLayout:
@@ -55,7 +54,7 @@
                 text: 'Previous'
                 on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_overview'
 
-<KernelsMemberFunctions@Screen>
+<KernelsMemberFunctions>
     name: 'kernels_member_functions'
     id: kernels_member_functions
     BoxLayout:
@@ -83,7 +82,7 @@
                 text: 'Previous'
                 on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_member_variables'
 
-<KernelsExample@Screen>
+<KernelsExample>
     name: 'kernels_example'
     id: kernels_example
     BoxLayout:
@@ -117,7 +116,7 @@
                 text: 'Run\nSimulation'
                 halign: 'center'
 
-<KernelsProblem@Screen>
+<KernelsProblem>
     name: 'kernels_problem'
     id: kernels_problem
     BoxLayout:
@@ -151,7 +150,7 @@
                 text: 'Run\nSimulation'
                 halign: 'center'
 
-<KernelsSolution@Screen>
+<KernelsSolution>
     name: 'kernels_solution'
     id: kernels_solution
     BoxLayout:

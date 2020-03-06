@@ -1,0 +1,3 @@
+Introduction to Kernels
+
+For a first description, we will say that a kernel contains a portion of the partial differential equation we are looking to solve. 
