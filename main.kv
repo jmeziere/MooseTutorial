@@ -72,7 +72,7 @@ ScreenManager:
                         on_press: recurring_themes_button.background_color = [1,1,1,1] if recurring_themes_button.background_color == [0,0,0,1] else [0,0,0,1]
                         on_press: moose_systems_button.background_color = [0,0,0,1]
                         on_press: sub_section_manager.current = 'recurring_themes_screen'
-                        on_press: sub_sections.width = 200  if recurring_themes_button.background_color == [0,0,0,1] else 0
+                        on_press: sub_sections.width = 100  if recurring_themes_button.background_color == [0,0,0,1] else 0
                     Button:
                         id: moose_systems_button
                         background_color: 0,0,0,1

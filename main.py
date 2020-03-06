@@ -5,9 +5,11 @@ from kivy.uix.boxlayout import BoxLayout
 import sys
 
 sys.path.append('Main/')
-from MainTutorial import InitScreen
+import MainTutorial
+
 sys.path.append('MooseSystems/')
 import MooseDecideScreen
+MooseDecideScreen.importFiles()
 
 sys.path.append('Installation/')
 
