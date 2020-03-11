@@ -6,7 +6,7 @@ from commonMethods import niceLayout
 class InputFilesOverview(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = niceLayout(width,'InputFilesOverview.txt', 'Recurring/InputFiles/')
+        (new_labels, height) = niceLayout(width,'InputFilesOverview1.txt', 'Recurring/InputFiles/')
         for label in new_labels:
             b_layout.add_widget(label)
         return height
