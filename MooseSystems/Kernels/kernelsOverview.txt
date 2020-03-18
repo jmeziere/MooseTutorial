@@ -1,3 +1,13 @@
 Introduction to Kernels
 
-For a first description, we will say that a kernel contains a portion of the partial differential equation we are looking to solve. 
+For a first description, we will say that a kernel contains a portion of the partial differential equation we are looking to solve. Although this may not make much sense right now, we promise that it will. For an example, we will use a completely made up partial differential equation with the form
+
+$ \frac{\partial u}{\partial t} = \nabla u + f(x)$
+
+After finding the weak form, we see that our PDE has been transformed to
+
+$\int \psi \nabla u + \int \psi f(x) - \int \psi \frac{\partial u}{\partial t} = 0$
+
+From this, we can see that there are three parts to our PDE. The last term on the left corresponds to the time derivative, while the other two are what goes into kernels. It is important to keep in mind here that it is also possible to have boundary conditions in the weak form of the PDE. For this simple example, there aren't any, but they can be recognised by the bounds of the integral that define them. For ours, we didn't even include the bounds since the integrals are over the same space. If you need more information about this, you can find this in the weak form explanation under the prerequisite knowledge tab. In any case, we have two parts of the PDE that will need to be entered in a kernel. The combination of all of these kernels, time derivatives, and boundary conditions completely define the main part of the PDE (i.e. not including initial conditions and the domain of the problem). 
+
+Before we get to the tutorial on the next page, we will take a moment to explain the power of this method. As you will soon see (in the example), 
