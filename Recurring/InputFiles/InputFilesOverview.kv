@@ -46,10 +46,112 @@
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_member_functions'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'input_files_example'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_overview'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'input_files_overview'
+
+<InputFilesExample>
+    name: 'input_files_example'
+    id: kernels_example
+    BoxLayout:
+        orientation: 'vertical'
+        ScrollView:
+            Label:
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+                text: "Example"
+        StackLayout:
+            orientation: 'rl-bt'
+            size_hint_y: None
+            height: 50
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Next'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'input_files_problem'
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Previous'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'input_files_overview1'
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Run\nSimulation'
+                halign: 'center'
+
+<InputFilesProblem>
+    name: 'input_files_problem'
+    id: kernels_problem
+    BoxLayout:
+        orientation: 'vertical'
+        ScrollView:
+            Label:
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+                text: "Problem"
+        StackLayout:
+            orientation: 'rl-bt'
+            size_hint_y: None
+            height: 50
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Next'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'input_files_solution'
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Previous'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'input_files_example'
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Run\nSimulation'
+                halign: 'center'
+
+<InputFilesSolution>
+    name: 'input_files_solution'
+    id: kernels_solution
+    BoxLayout:
+        orientation: 'vertical'
+        ScrollView:
+            Label:
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+                text: "Solution"
+        StackLayout:
+            orientation: 'rl-bt'
+            size_hint_y: None
+            height: 50
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Next'
+                background_color: 0,0,0,1
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Previous'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_problem'
+            Button:
+                size_hint: None, None
+                height: 50
+                width: 100
+                text: 'Run\nSimulation'
+                halign: 'center'

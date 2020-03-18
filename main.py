@@ -15,6 +15,10 @@ sys.path.append('Installation/')
 import InstallationDecideScreen
 InstallationDecideScreen.importFiles()
 
+sys.path.append('Recurring/')
+import RecurringThemesScreen
+RecurringThemesScreen.importFiles()
+
 from kivy.uix.screenmanager import ScreenManager, Screen
 
 class MainScreen(Screen):
