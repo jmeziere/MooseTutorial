@@ -21,7 +21,7 @@ def niceLayout(width,filename,path = ''):
     labels.append(new_label)
     height = new_label.height
     i = 1
-    while i < len(lines[1:]):
+    while i < len(lines):
         lines[i] = lines[i][:-1]
         if len(lines[i]) > 0 and lines[i][0] == '$' and lines[i][-1] == '$':
             preview(lines[i], viewer='file', filename=path+filename+str(index)+'.png', euler=False)
@@ -63,7 +63,6 @@ def niceLayout(width,filename,path = ''):
                     new_label.add_widget(table_element)
                 label_height += max_height
                 i += 1
-                print(i)
                 lines[i] = lines[i][:-1]
             new_label.height = label_height
             height += new_label.height
