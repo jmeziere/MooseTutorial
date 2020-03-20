@@ -1,0 +1,13 @@
+Kernel Member Functions & Class Types
+
+Another powerful part of kernels is the capability for automatic differentiation. When writing kernel classes previously, it was necessary to find the off-terms for the matrix used in the solver. This was done by finding several derivatives that could be very cumbersome to derive and to write into code. While it is still possible to write the code this way, the automatic differentiation system gave scientists the opportunity to skip this step. The following table gives the automatic differention class types, the member function to override, and its use. This information can also be found at https://mooseframework.inl.gov/workshop/#/18/3.
+
+Table
+Class | Member Function | Use
+
+ADKernel | ComputeQpResidual | Use when the term in the PDE is multiplied by both the test function and the gradient of the test function (_test and _grad_test must be applied)
+
+ADKernelValue | precomputeQpResidual | Use when the term computed in the PDE is only multiplied by the test function (do not use _test in the override, it is applied automatically)
+
+ADKernelGrad | precomputeQpResidual | Use when the term computed in the PDE is only multiplied by the gradient of the test functio (do not use _grad_test in the override, it is applied automatically)
+End

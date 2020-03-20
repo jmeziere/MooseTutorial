@@ -59,9 +59,15 @@ def niceLayout(width,filename,path = ''):
                 for table_element in label_elements:
                     max_height = max(max_height, table_element.texture_size[1])
                 for table_element in label_elements:
-                    table_element.height = max_height
+                    if max_height == 0:
+                        table_element.height = 15
+                    else:
+                        table_element.height = max_height
                     new_label.add_widget(table_element)
-                label_height += max_height
+                if max_height == 0:
+                    label_height += 15
+                else:
+                    label_height += max_height
                 i += 1
                 lines[i] = lines[i][:-1]
             new_label.height = label_height

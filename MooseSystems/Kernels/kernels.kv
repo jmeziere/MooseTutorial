@@ -32,11 +32,11 @@
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
-            Label:
+            BoxLayout:
+                id: tester
+                orientation: 'vertical'
                 size_hint_y: None
-                height: self.texture_size[1]
-                text_size: self.width, None
-                text: "Member Variables"
+                height: kernels_member_variables.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -60,11 +60,11 @@
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
-            Label:
+            BoxLayout:
+                id: tester
+                orientation: 'vertical'
                 size_hint_y: None
-                height: self.texture_size[1]
-                text_size: self.width, None
-                text: "Member Functions"
+                height: kernels_member_functions.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -88,11 +88,11 @@
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
-            Label:
+            BoxLayout:
+                id: tester
+                orientation: 'vertical'
                 size_hint_y: None
-                height: self.texture_size[1]
-                text_size: self.width, None
-                text: "Example"
+                height: kernels_example.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
