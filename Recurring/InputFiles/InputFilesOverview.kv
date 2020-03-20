@@ -8,7 +8,7 @@
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: kernels_overview.addText(root.width)
+                height: input_files_overview.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -25,34 +25,6 @@
                 width: 100
                 text: 'Previous'
                 background_color: 0,0,0,1
-
-<InputFilesOverview1>
-    name: 'input_files_overview1'
-    id: input_files_overview1
-    BoxLayout:
-        orientation: 'vertical'
-        ScrollView:
-            Label:
-                size_hint_y: None
-                height: self.texture_size[1]
-                text_size: self.width, None
-                text: "Member Variables"
-        StackLayout:
-            orientation: 'rl-bt'
-            size_hint_y: None
-            height: 50
-            Button:
-                size_hint: None, None
-                height: 50
-                width: 100
-                text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'input_files_example'
-            Button:
-                size_hint: None, None
-                height: 50
-                width: 100
-                text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'input_files_overview'
 
 <InputFilesExample>
     name: 'input_files_example'

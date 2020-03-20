@@ -11,38 +11,23 @@ class InputFilesOverview(Screen):
             b_layout.add_widget(label)
         return height
 
-class InputFilesOverview1(Screen):
-    def getKernelsOverviewString(self):
-        with open('InputFilesOverview1.txt') as file:
-            data = file.read()
-        return data
-
-# class InputFilesMemberVariables(Screen):
-#     def getKernelsOverviewString(self):
-#         with open('kernelsMemberVariables.txt') as file:
-#             data = file.read()
-#         return data
-
-# class KernelsMemberFunctions(Screen):
-#     def getKernelsOverviewString(self):
-#         with open('kernelsMemberFunctions.txt') as file:
-#             data = file.read()
-#         return data
-
 class InputFilesExample(Screen):
-    def getKernelsOverviewString(self):
+    pass
+"""    def getKernelsOverviewString(self):
         with open('InputFilesExample.txt') as file:
             data = file.read()
-        return data
+        return data"""
 
 class InputFilesProblem(Screen):
-    def getKernelsOverviewString(self):
+    pass
+    """def getKernelsOverviewString(self):
         with open('InputFilesProblem.txt') as file:
             data = file.read()
-        return data
+        return data"""
 
 class InputFilesSolution(Screen):
-    def getKernelsOverviewString(self):
+    pass
+    """def getKernelsOverviewString(self):
         with open('InputFilesSolution.txt') as file:
             data = file.read()
-        return data
+        return data """
