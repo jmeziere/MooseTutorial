@@ -1,4 +1,4 @@
-<InputFilesOverview>
+<InputFilesOverview@Screen>
     name: 'input_files_overview'
     id: input_files_overview
     BoxLayout:
@@ -18,7 +18,7 @@
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'input_files_overview1'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'input_files_example'
             Button:
                 size_hint: None, None
                 height: 50
@@ -52,7 +52,7 @@
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'input_files_overview1'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'input_files_overview'
             Button:
                 size_hint: None, None
                 height: 50
