@@ -1,6 +1,6 @@
-<Mint>
-    name: 'Mint'
-    id: 'Mint'
+<Fedora>
+    name: 'Fedora'
+    id: 'Fedora'
     Label:
         text: "Login Password:"
         pos: 50,450
@@ -14,8 +14,14 @@
         height: 50
         multiline: False
     Button:
-        text: "Download MOOSE for Mint19"
+        text: "Download MOOSE for Fedora"
         pos:50 , 300
         height: 30
         size_hint: (.2, None)
         on_release: root.install()
+    Button:
+        text: "Second Part of Installation"
+        pos:50 , 250
+        height: 30
+        size_hint: (.2, None)
+        on_release: root.install_too()
