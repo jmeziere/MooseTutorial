@@ -25,7 +25,11 @@ import PrerequisiteDecideScreen
 from kivy.uix.screenmanager import ScreenManager, Screen
 
 class MainScreen(Screen):
-    pass
+    def save_moose_path(self,moose_path_widget):
+        moosepath = moose_path_widget.text
+        f = open('moosepath.txt',"w")
+        f.write(moosepath)
+        f.close()
 
 presentation = Builder.load_string("""
 #:import NoTransition kivy.uix.screenmanager.NoTransition
@@ -110,6 +114,18 @@ ScreenManager:
                         on_press: moose_systems_button.background_color = [1,1,1,1] if moose_systems_button.background_color == [0,0,0,1] else [0,0,0,1]
                         on_press: sub_section_manager.current = 'moose_decide_screen'
                         on_press: sub_sections.width = 220  if moose_systems_button.background_color == [0,0,0,1] else 0
+                    TextInput:
+                        id: moose_path
+                        text: 'MOOSE Path'
+                        height: 30
+                        size_hint_y: None
+                    Button:
+                        id: save_moose_path
+                        text: 'Save'
+                        background_color: 0,0,0,1
+                        height: 30
+                        size_hint_y: None
+                        on_press: main_screen.save_moose_path(moose_path)
                 BoxLayout:
                     id: sub_sections
                     size_hint_x: None
