@@ -7,7 +7,7 @@ from PIL import ImageFont, ImageDraw
 import os
 from os.path import expanduser
 
-moosepath = expanduser('~/Research/GBResearch')
+moosepath = expanduser('~') 
 
 def niceLayout(width,filename,path = ''):
     file = open(os.path.join(path,filename+'.txt'))

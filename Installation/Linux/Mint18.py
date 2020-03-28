@@ -3,7 +3,6 @@ import os
 import subprocess
 from kivy.lang import Builder
 
-
 class Mint18(Screen):
     def install(self):
         password = self.ids.passw.text
@@ -19,6 +18,15 @@ class Mint18(Screen):
             os.system("sh -c 'echo \"" + password + "\" | sudo -Sv; echo \"module load moose-dev-gcc\" >> ~/.bashrc'")
 
         os.system("mkdir ~/projects; cd ~/projects; git clone https://github.com/idaholab/moose.git; cd moose; git checkout master")
+
+        f = open("moosepath.txt", "w")
+        f.write("~")
+        f.close()
+
+        try:
+            subprocess.check_output("grep 'export PATH="+os.path.join(commonMethods.moosepath,projects/moose/python/peacock)+":$PATH' ~/.bashrc", shell = True)
+        except subprocess.CalledProcessError as e:
+            os.system("sh -c 'echo \"" + password + "\" | sudo -Sv; echo \"export PATH="+os.path.join(commonMethods.moosepath,projects/moose/python/peacock)+":$PATH\" >> ~/.bashrc'")
 
         os.system("cd ~/projects/moose; ./scripts/update_and_rebuild_libmesh.sh")
 
