@@ -7,9 +7,13 @@ from PIL import ImageFont, ImageDraw
 import os
 from os.path import expanduser
 
+<<<<<<< HEAD
 moose_file = open(os.path.join(os.path.dirname(__file__),'moosepath.txt'))
 string = str(moose_file.read())
 moosepath = expanduser(string[:-1])
+=======
+moosepath = expanduser('~') 
+>>>>>>> f9e1092c73f0a99745482329421dea269a6b48c6
 
 def niceLayout(width,filename,path = ''):
     file = open(os.path.join(path,filename+'.txt'))
