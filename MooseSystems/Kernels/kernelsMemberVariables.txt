@@ -1,1 +1,15 @@
 Kernel Member Variables
+
+There are several member objects that have been defined that are necessary for the program to work properly. These are defined in the table below. It is important that you use these variables when they are necessary and not try to create your own as MOOSE expects these.
+
+Table
+Member Object|Description
+_u|Value of the variable this Kernel is operating on
+_grad_u|Gradient of the variable this Kernel is operating on
+_phi|Value of the test functions at the quadrature point
+_grad_phi|Gradient of the test functions at the quadrature points
+_q_point|Coordinates of the current quadrature point
+_i|Current index for the test functions
+_j|Current index for the trial functions
+_qp|Current quadrature point index
+End

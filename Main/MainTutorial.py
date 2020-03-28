@@ -8,12 +8,12 @@ class AboutInl(Screen):
 
 class AboutMoose(Screen):
     def getAboutMooseString(self):
-        with open('Main/AboutMoose.txt','r') as file:
+        with open('MooseTutorial/Main/AboutMoose.txt','r') as file:
             data = file.read()
         return data
 
 class AboutTutorial(Screen):
     def getAboutTutorialString(self):
-        with open('Main/AboutTutorial.txt','r') as file:
+        with open('MooseTutorial/Main/AboutTutorial.txt','r') as file:
             data = file.read()
         return data

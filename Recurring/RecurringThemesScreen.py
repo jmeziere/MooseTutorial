@@ -1,4 +1,7 @@
 def importFiles():
     import sys
-    sys.path.append('Recurring/InputFiles/')
+    import pathlib
+
+    current = pathlib.Path(__file__).parent.absolute()
+    sys.path.append(str(current)+'/InputFiles/')
     import InputFilesOverview

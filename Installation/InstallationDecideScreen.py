@@ -1,5 +1,6 @@
 def importFiles():
     import sys
-    sys.path.append('Installation/Linux')
+    import os
+    sys.path.append(os.path.join(os.path.dirname(__file__), "Linux"))
     import Mint
     import Ubuntu

@@ -1,4 +1,7 @@
 def importFiles():
     import sys
-    sys.path.append('MooseSystems/Kernels/')
+    import pathlib
+
+    current = pathlib.Path(__file__).parent.absolute()
+    sys.path.append(str(current)+'/Kernels/')
     import kernels
