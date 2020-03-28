@@ -3,12 +3,12 @@ from kivy.uix.stacklayout import StackLayout
 from kivy.uix.image import Image
 from kivy.graphics import Color, Rectangle, Line
 from collections import deque
-from sympy import preview
 from cv2 import imread, bitwise_not, imwrite
 from PIL import ImageFont, ImageDraw
+import os
 
 def niceLayout(width,filename,path = ''):
-    file = open(path+filename)
+    file = open(os.path.join(path,filename+'.txt'))
     lines = file.readlines()
     labels = []
     index = 0
@@ -24,11 +24,7 @@ def niceLayout(width,filename,path = ''):
     while i < len(lines):
         lines[i] = lines[i][:-1]
         if len(lines[i]) > 0 and lines[i][0] == '$' and lines[i][-1] == '$':
-            preview(lines[i], viewer='file', filename=path+filename+str(index)+'.png', euler=False)
-            image = imread(path+filename+str(index)+'.png')
-            invert = bitwise_not(image)
-            imwrite(path+filename+str(index)+'.png',invert)
-            new_label = Image(source=path+filename+str(index)+'.png')
+            new_label = Image(source=os.path.join(path,filename+str(index)+'.png'))
             new_label.size_hint_y = None
             new_label.height = 20
             new_label.halign = 'left'

@@ -1,7 +1,7 @@
 from kivy.uix.screenmanager import Screen
 import os
 import subprocess
-
+from kivy.lang import Builder
 
 class Ubuntu16_04(Screen):
     def install(self):
@@ -22,3 +22,33 @@ class Ubuntu16_04(Screen):
         os.system("cd ~/projects/moose; ./scripts/update_and_rebuild_libmesh.sh")
 
         os.system("cd ~/projects/moose/test; make -j 4; ./run_tests -j 4")
+
+Builder.load_string("""
+<Ubuntu16_04>
+    name: 'Ubuntu16_04'
+    id: 'Ubuntu16_04'
+    Label:
+        text: "Login Password:"
+        pos: 50,450
+        size_hint: (.2,None)
+        height: 50
+    TextInput:
+        password: True
+        id: passw
+        pos: 50,400
+        size_hint: (.2, None)
+        height: 50
+        multiline: False
+    Button:
+        text: "Download MOOSE for Ubuntu16.04"
+        pos:50 , 300
+        height: 30
+        size_hint: (.2, None)
+        on_release: root.install()
+    Button:
+        text: "Second Part of Installation"
+        pos:50 , 250
+        height: 30
+        size_hint: (.2, None)
+        on_release: root.install_too()
+""", filename = "Ubuntu16_04.kv")

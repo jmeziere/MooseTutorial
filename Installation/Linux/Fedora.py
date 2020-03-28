@@ -1,6 +1,7 @@
 from kivy.uix.screenmanager import Screen
 import os
 import subprocess
+from kivy.lang import Builder
 
 
 class Fedora(Screen):
@@ -22,3 +23,33 @@ class Fedora(Screen):
         os.system("cd ~/projects/moose; ./scripts/update_and_rebuild_libmesh.sh")
 
         os.system("cd ~/projects/moose/test; make -j 4; ./run_tests -j 4")
+
+Builder.load_string("""
+<Fedora>
+    name: 'Fedora'
+    id: 'Fedora'
+    Label:
+        text: "Login Password:"
+        pos: 50,450
+        size_hint: (.2,None)
+        height: 50
+    TextInput:
+        password: True
+        id: passw
+        pos: 50,400
+        size_hint: (.2, None)
+        height: 50
+        multiline: False
+    Button:
+        text: "Download MOOSE for Fedora"
+        pos:50 , 300
+        height: 30
+        size_hint: (.2, None)
+        on_release: root.install()
+    Button:
+        text: "Second Part of Installation"
+        pos:50 , 250
+        height: 30
+        size_hint: (.2, None)
+        on_release: root.install_too()
+""", filename = "Fedora.kv")

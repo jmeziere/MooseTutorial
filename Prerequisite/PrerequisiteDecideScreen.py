@@ -1,3 +1,6 @@
+from kivy.lang import Builder
+
+Builder.load_string("""
 #:import App kivy.app.App
 <PrerequisiteDecideScreen@Screen>
     name: 'prerequisite_decide_screen'
@@ -36,3 +39,4 @@
             on_release: App.get_running_app().root.ids.sub_sections.width = 0
             on_release: App.get_running_app().root.ids.prerequisite_knowledge_button.background_color = [0,0,0,1]
             on_release: functional_button.background_color = [0,0,0,1]
+""", filename = "PrerequisiteDecideScreen.kv")
