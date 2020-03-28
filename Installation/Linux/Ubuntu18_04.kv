@@ -1,0 +1,27 @@
+<Ubuntu18_04>
+    name: 'Ubuntu18_04'
+    id: 'Ubuntu18_04'
+    Label:
+        text: "Login Password:"
+        pos: 50,450
+        size_hint: (.2,None)
+        height: 50
+    TextInput:
+        password: True
+        id: passw
+        pos: 50,400
+        size_hint: (.2, None)
+        height: 50
+        multiline: False
+    Button:
+        text: "Download MOOSE for Ubuntu"
+        pos:50 , 300
+        height: 30
+        size_hint: (.2, None)
+        on_release: root.install()
+    Button:
+        text: "Second Part of Installation"
+        pos:50 , 250
+        height: 30
+        size_hint: (.2, None)
+        on_release: root.install_too()

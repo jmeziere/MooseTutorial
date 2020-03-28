@@ -1,6 +1,8 @@
 def importFiles():
     import sys
-    import os
-    sys.path.append(os.path.join(os.path.dirname(__file__), "Linux"))
-    import Mint
-    import Ubuntu
+    sys.path.append('Installation/Linux')
+    import Mint18
+    import Mint19
+    import Ubuntu16_04
+    import Ubuntu18_04
+    import Fedora
