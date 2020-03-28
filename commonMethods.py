@@ -3,9 +3,11 @@ from kivy.uix.stacklayout import StackLayout
 from kivy.uix.image import Image
 from kivy.graphics import Color, Rectangle, Line
 from collections import deque
-from cv2 import imread, bitwise_not, imwrite
 from PIL import ImageFont, ImageDraw
 import os
+from os.path import expanduser
+
+moosepath = expanduser('~/Research/GBResearch')
 
 def niceLayout(width,filename,path = ''):
     file = open(os.path.join(path,filename+'.txt'))
@@ -69,6 +71,27 @@ def niceLayout(width,filename,path = ''):
             new_label.height = label_height
             height += new_label.height
             i += 1
+        elif lines[i][:4] == "File":
+            new_line = lines[i].split(',')
+            new_label = Label(text = new_line[1])
+            new_label.font_size = 20
+            new_label.size_hint_y = None
+            new_label.text_size = [width,None]
+            new_label.texture_update()
+            labels.append(new_label)
+            height += new_label.height
+
+            sub_file = open(os.path.join(moosepath,new_line[2]))
+            data_text = sub_file.read()
+            whole_text = ' '.join(data_text)
+
+            new_label = Label(text = whole_text)
+            new_label.size_hint_y = None
+            new_label.text_size = [width,None]
+            new_label.texture_update()
+            new_label.height = new_label.texture_size[1]
+            height += new_label.height
+            i += 1
         else:
             new_label = Label(text = lines[i])
             new_label.size_hint_y = None
@@ -82,3 +105,7 @@ def niceLayout(width,filename,path = ''):
             i += 1
         labels.append(new_label)
     return (labels,height)
+
+def runSimulation(filename):
+    sim_path = os.path.join(moosepath,filename)
+    os.system('peacock -i '+sim_path)

@@ -10,7 +10,6 @@ class AboutInl(Screen):
 
 class AboutMoose(Screen):
     def getAboutMooseString(self):
-        print(os.getcwd())
         with open(os.path.join(os.path.dirname(__file__), "AboutMoose.txt"),'r') as file:
             data = file.read()
         return data

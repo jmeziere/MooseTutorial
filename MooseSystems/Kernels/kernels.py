@@ -1,14 +1,14 @@
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.boxlayout import BoxLayout
-from pylatexenc.latex2text import LatexNodes2Text
-from commonMethods import niceLayout
+import commonMethods
 from kivy.lang import Builder
 import os
+import _thread
 
 class KernelsOverview(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = niceLayout(width,'kernelsOverview', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'kernelsOverview', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
@@ -16,7 +16,7 @@ class KernelsOverview(Screen):
 class KernelsMemberVariables(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = niceLayout(width,'kernelsMemberVariables', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'kernelsMemberVariables', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
@@ -24,7 +24,7 @@ class KernelsMemberVariables(Screen):
 class KernelsMemberFunctions(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = niceLayout(width,'kernelsMemberFunction', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'kernelsMemberFunction', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
@@ -32,10 +32,13 @@ class KernelsMemberFunctions(Screen):
 class KernelsExample(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = niceLayout(width,'kernelsExample', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'kernelsExample', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
+
+    def runSimulation(self):
+        _thread.start_new_thread(commonMethods.runSimulation,('projects/moose/tutorials/darcy_thermo_mech/step01_diffusion/problems/step1.i',))
 
 class KernelsProblem(Screen):
     def getKernelsOverviewString(self):
@@ -167,6 +170,7 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
+                on_release: kernels_example.runSimulation()
 
 <KernelsProblem>
     name: 'kernels_problem'

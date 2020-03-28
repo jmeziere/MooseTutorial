@@ -1,9 +1,8 @@
 from kivy.lang import Builder
 import sys
-import pathlib
+import os
 
-current = pathlib.Path(__file__).parent.absolute()
-sys.path.append(str(current)+'/Kernels/')
+sys.path.append(os.path.join(os.path.dirname(__file__), "Kernels"))
 import kernels
 
 Builder.load_string("""

@@ -1,14 +1,13 @@
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.boxlayout import BoxLayout
-from pylatexenc.latex2text import LatexNodes2Text
-from commonMethods import niceLayout
+import commonMethods
 from kivy.lang import Builder
 import os
 
 class InputFilesOverview(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = niceLayout(width,'InputFilesOverview', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'InputFilesOverview', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height

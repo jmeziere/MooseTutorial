@@ -1,1 +1,21 @@
 Kernel Example
+
+For this example, we will use the diffusion problem. To jog your memory, the PDE for this is
+
+$\nabla^2 u = 0$
+
+After finding the weak form, we find that this equation is transformed to
+
+$\int_{\Omega} \nabla \psi_i \cdot \nabla u d\Omega$
+
+or, in inner product notation,
+
+$\left(\nabla \psi_i,\nabla u \right)$
+
+This example is also presented in https://mooseframework.inl.gov/workshop/#/18/5.
+
+The following are the files that need to be included for this to work.
+
+File,ADDiffusion.h,projects/moose/framework/include/kernels/ADDiffusion.h
+File,ADDiffusion.C,projects/moose/framework/src/kernels/ADDiffusion.C
+File,diffusion.i,projects/moose/tutorials/darcy_thermo_mech/step01_diffusion/problems/step1.i

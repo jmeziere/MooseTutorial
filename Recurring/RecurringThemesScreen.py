@@ -1,9 +1,8 @@
 import sys
-import pathlib
+import os
 from kivy.lang import Builder
 
-current = pathlib.Path(__file__).parent.absolute()
-sys.path.append(str(current)+'/InputFiles/')
+sys.path.append(os.path.join(os.path.dirname(__file__), "InputFiles"))
 import InputFilesOverview
 
 Builder.load_string("""

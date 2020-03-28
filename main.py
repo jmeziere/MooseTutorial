@@ -8,7 +8,6 @@ import os
 sys.path.append(os.path.dirname(__file__))
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "Main"))
-print(sys.path)
 import MainTutorial
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "MooseSystems"))
@@ -198,7 +197,6 @@ ScreenManager:
 class MainApp(App):
     def build(self):
         return presentation
-        
-print("herenow")
+
 if __name__ == '__main__':
     MainApp().run()
