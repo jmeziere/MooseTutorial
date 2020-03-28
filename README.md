@@ -22,3 +22,6 @@ setup(
         install_requires=['kivy','os','sys','subprocess','collection','image']
         )
 ```
+
+Install command after getting the deb file
+`sudo apt install ./name.deb`
