@@ -19,9 +19,7 @@ class Ubuntu16_04(Screen):
 
         os.system("mkdir ~/projects; cd ~/projects; git clone https://github.com/idaholab/moose.git; cd moose; git checkout master")
 
-        f = open("moosepath.txt", "w")
-        f.write("~")
-        f.close()
+        os.system("sh -c 'echo \"" + password + "\" | sudo -Sv; echo \"~\" > moosepath.txt'")
 
         try:
             subprocess.check_output("grep 'export PATH="+os.path.join(commonMethods.moosepath,projects/moose/python/peacock)+":$PATH' ~/.bashrc", shell = True)

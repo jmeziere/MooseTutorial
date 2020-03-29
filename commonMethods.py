@@ -9,7 +9,7 @@ from os.path import expanduser
 
 moose_file = open(os.path.join(os.path.dirname(__file__),'moosepath.txt'))
 string = str(moose_file.read())
-moosepath = expanduser(string[:-1])
+moosepath = expanduser(string)
 
 def niceLayout(width,filename,path = ''):
     file = open(os.path.join(path,filename+'.txt'))
@@ -82,11 +82,12 @@ def niceLayout(width,filename,path = ''):
             new_label.texture_update()
             labels.append(new_label)
             height += new_label.height
-
-            sub_file = open(os.path.join(moosepath,new_line[2]))
-            data_text = sub_file.read()
-            whole_text = ' '.join(data_text)
-
+            try:
+                sub_file = open(os.path.join(moosepath,new_line[2]))
+                data_text = sub_file.read()
+                whole_text = ' '.join(data_text)
+            except:
+                whole_text = "File not found.\nEither MOOSE is not installed or the path is incorrect!"
             new_label = Label(text = whole_text)
             new_label.size_hint_y = None
             new_label.text_size = [width,None]
