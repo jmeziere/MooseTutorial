@@ -2,7 +2,6 @@ from kivy.uix.screenmanager import Screen
 import os
 import subprocess
 from kivy.lang import Builder
-import _thread
 
 class Fedora(Screen):
     def install(self):
@@ -51,5 +50,5 @@ Builder.load_string("""
         pos:50 , 250
         height: 30
         size_hint: (.2, None)
-        on_release: th.start_new_thread(root.install_too())
+        on_release: th.start_new_thread(root.install_too,())
 """, filename = "Fedora.kv")

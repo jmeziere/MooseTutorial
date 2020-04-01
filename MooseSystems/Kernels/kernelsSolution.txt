@@ -1,0 +1,27 @@
+Kernel Solution
+
+For this problem, the PDE we will use is the Darcy Pressure equation. The Darcy Pressure equation has the follwing form.
+
+$-\nabla \frac{K}{\mu} \nabla p = 0$
+
+where
+$K \text{ is the permeability tensor}$
+$\mu \text{ is the fluid viscosity}$
+
+For our problem, we will assume that the permeability tensor is just a scalar value.
+After finding the weak form, we find that this equation is transformed to
+
+$\int_{\Omega} \frac{K}{\mu} \nabla \psi_i \cdot \nabla p \quad d\Omega - \int_{\partial\Omega} \psi_i \frac{K}{\mu} \nabla p \cdot \hat{n} \quad d\partial\Omega$
+
+or, in inner product notation,
+
+$\left(\frac{K}{\mu} \nabla \psi_i,\nabla p \right) - \left<\frac{K}{\mu} \psi_i, \nabla p \cdot \hat{n} \right>$
+
+Since we only care about the volume integral for the kernels, we will only implement the first term in this example. The second term would be implemented in a boundary condition file.
+This example is also presented in https://mooseframework.inl.gov/workshop/index.html#/15/1.
+
+The following are the files that need to be included for this to work.
+
+File,DarcyPressure.h,projects/moose/tutorials/darcy_thermo_mech/step02_darcy_pressure/include/kernels/DarcyPressure.h
+File,DarcyPressure.C,projects/moose/tutorials/darcy_thermo_mech/step02_darcy_pressure/src/kernels/DarcyPressure.C
+File,darcy_pressure.i,projects/moose/tutorials/darcy_thermo_mech/step02_darcy_pressure/problems/step2.i

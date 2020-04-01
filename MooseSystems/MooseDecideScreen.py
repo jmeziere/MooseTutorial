@@ -4,6 +4,8 @@ import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "Kernels"))
 import kernels
+sys.path.append(os.path.join(os.path.dirname(__file__), "Actions"))
+import actions
 
 Builder.load_string("""
 <MooseDecideScreen@Screen>
@@ -28,7 +30,7 @@ Builder.load_string("""
                 on_release: App.get_running_app().root.ids.sub_sections.width = 0
                 on_release: App.get_running_app().root.ids.moose_systems_button.background_color = [0,0,0,1]
                 on_release: action_button.background_color = [0,0,0,1]
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'needs_work'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_overview'
             Button:
                 id: aux_ker_button
                 size_hint_y: None

@@ -6,12 +6,13 @@ $\nabla^2 u = 0$
 
 After finding the weak form, we find that this equation is transformed to
 
-$\int_{\Omega} \nabla \psi_i \cdot \nabla u d\Omega$
+$\int_{\Omega} \nabla \psi_i \cdot \nabla u \quad d\Omega - \int_{\partial\Omega} \psi_i \nabla u \cdot \hat{n} \quad d\partial\Omega$
 
 or, in inner product notation,
 
-$\left(\nabla \psi_i,\nabla u \right)$
+$\left(\nabla \psi_i,\nabla u \right) - \left< \psi_i, \nabla u \cdot \hat{n} \right>$
 
+Since we only care about the volume integral for the kernels, we will only implement the first term in this example. The second term would be implemented in a boundary condition file.
 This example is also presented in https://mooseframework.inl.gov/workshop/#/18/5.
 
 The following are the files that need to be included for this to work.

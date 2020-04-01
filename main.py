@@ -165,6 +165,12 @@ ScreenManager:
                         InputFilesSolution:
                         # MOOSE Systems
                             # Actions
+                        ActionsOverview:
+                        ActionsMemberVariables:
+                        ActionsMemberFunctions:
+                        ActionsExample:
+                        ActionsProblem:
+                        ActionsSolution:
                             # Auxiliary Kernels
                             # Auxiliary Variables
                             # Boundary Conditions

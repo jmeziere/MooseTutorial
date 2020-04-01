@@ -5,34 +5,34 @@ from kivy.lang import Builder
 import os
 import _thread
 
-class KernelsOverview(Screen):
+class ActionsOverview(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'kernelsOverview', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'actionsOverview', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
-class KernelsMemberVariables(Screen):
+class ActionsMemberVariables(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'kernelsMemberVariables', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'actionsMemberVariables', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
-class KernelsMemberFunctions(Screen):
+class ActionsMemberFunctions(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'kernelsMemberFunction', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'actionsMemberFunction', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
-class KernelsExample(Screen):
+class ActionsExample(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'kernelsExample', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'actionsExample', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
@@ -40,26 +40,26 @@ class KernelsExample(Screen):
     def runSimulation(self):
         _thread.start_new_thread(commonMethods.runSimulation,('projects/moose/tutorials/darcy_thermo_mech/step01_diffusion/problems/step1.i',))
 
-class KernelsProblem(Screen):
+class ActionsProblem(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'kernelsProblem', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'actionsProblem', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
-class KernelsSolution(Screen):
+class ActionsSolution(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'kernelsSolution', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'actionsSolution', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
 Builder.load_string("""
-<KernelsOverview>
-    name: 'kernels_overview'
-    id: kernels_overview
+<ActionsOverview>
+    name: 'actions_overview'
+    id: actions_overview
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -67,7 +67,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: kernels_overview.addText(root.width)
+                height: actions_overview.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -77,7 +77,7 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_member_variables'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_member_variables'
             Button:
                 size_hint: None, None
                 height: 50
@@ -85,9 +85,9 @@ Builder.load_string("""
                 text: 'Previous'
                 background_color: 0,0,0,1
 
-<KernelsMemberVariables>
-    name: 'kernels_member_variables'
-    id: kernels_member_variables
+<ActionsMemberVariables>
+    name: 'actions_member_variables'
+    id: actions_member_variables
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -95,7 +95,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: kernels_member_variables.addText(root.width)
+                height: actions_member_variables.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -105,17 +105,17 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_member_functions'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_member_functions'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_overview'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_overview'
 
-<KernelsMemberFunctions>
-    name: 'kernels_member_functions'
-    id: kernels_member_functions
+<ActionsMemberFunctions>
+    name: 'actions_member_functions'
+    id: actions_member_functions
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -123,7 +123,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: kernels_member_functions.addText(root.width)
+                height: actions_member_functions.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -133,17 +133,17 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_example'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_example'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_member_variables'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_member_variables'
 
-<KernelsExample>
-    name: 'kernels_example'
-    id: kernels_example
+<ActionsExample>
+    name: 'actions_example'
+    id: actions_example
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -151,7 +151,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: kernels_example.addText(root.width)
+                height: actions_example.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -161,24 +161,24 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_problem'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_problem'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_member_functions'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_member_functions'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: kernels_example.runSimulation()
+                on_release: actions_example.runSimulation()
 
-<KernelsProblem>
-    name: 'kernels_problem'
-    id: kernels_problem
+<ActionsProblem>
+    name: 'actions_problem'
+    id: actions_problem
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -186,7 +186,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: kernels_problem.addText(root.width)
+                height: actions_problem.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -196,13 +196,13 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_solution'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_solution'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_example'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_example'
             Button:
                 size_hint: None, None
                 height: 50
@@ -210,9 +210,9 @@ Builder.load_string("""
                 text: 'Run\\nSimulation'
                 halign: 'center'
 
-<KernelsSolution>
-    name: 'kernels_solution'
-    id: kernels_solution
+<ActionsSolution>
+    name: 'actions_solution'
+    id: actions_solution
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -220,7 +220,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: kernels_solution.addText(root.width)
+                height: actions_solution.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -236,11 +236,11 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_problem'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_problem'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-""", filename = "kernels.kv")
+""", filename = "actions.kv")
