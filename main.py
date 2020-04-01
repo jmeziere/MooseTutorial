@@ -25,10 +25,10 @@ import PrerequisiteDecideScreen
 from kivy.uix.screenmanager import ScreenManager, Screen
 
 class MainScreen(Screen):
-    def save_moose_path(self,moose_path_widget, password_widget):
+    def save_moose_path(self,moose_path_widget):
         moosepath = moose_path_widget.text
-        password = password_widget.text
-        os.system("bash -c 'echo \""+moosepath+"\" > moosepath.txt'")
+        os.system("sudo rm -r moosepath.txt")
+        os.system("sudo echo \""+moosepath+"\" > "+os.path.join(os.path.dirname(__file__),"moosepath.txt"))
 
 presentation = Builder.load_string("""
 #:import NoTransition kivy.uix.screenmanager.NoTransition
@@ -118,19 +118,13 @@ ScreenManager:
                         text: 'MOOSE Path'
                         height: 30
                         size_hint_y: None
-                    TextInput:
-                        id: password
-                        password: True
-                        text: 'Sudo Password'
-                        height: 30
-                        size_hint_y: None
                     Button:
                         id: save_moose_path
                         text: 'Save'
                         background_color: 0,0,0,1
                         height: 30
                         size_hint_y: None
-                        on_press: main_screen.save_moose_path(moose_path, password)
+                        on_press: main_screen.save_moose_path(moose_path)
                         on_press: save_moose_path.background_color = [1,1,1,1]
                         on_release: save_moose_path.background_color = [0,0,0,1]
                 BoxLayout:

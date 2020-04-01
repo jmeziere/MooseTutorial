@@ -1,1 +1,1 @@
-MOOSE Path
+MOOSEPath

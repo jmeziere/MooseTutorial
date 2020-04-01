@@ -156,7 +156,7 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'kernels_problem'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'input_files_problem'
             Button:
                 size_hint: None, None
                 height: 50

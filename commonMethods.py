@@ -9,7 +9,10 @@ from os.path import expanduser
 
 moose_file = open(os.path.join(os.path.dirname(__file__),'moosepath.txt'))
 string = str(moose_file.read())
+if(string[-1] == '\n'):
+    string = string[:-1]
 moosepath = expanduser(string)
+print(moosepath)
 
 def niceLayout(width,filename,path = ''):
     file = open(os.path.join(path,filename+'.txt'))
@@ -26,7 +29,8 @@ def niceLayout(width,filename,path = ''):
     height = new_label.height
     i = 1
     while i < len(lines):
-        lines[i] = lines[i][:-1]
+        if(lines[i][-1] == '\n'):
+            lines[i] = lines[i][:-1]
         if len(lines[i]) > 0 and lines[i][0] == '$' and lines[i][-1] == '$':
             new_label = Image(source=os.path.join(path,filename+str(index)+'.png'))
             new_label.size_hint_y = None
