@@ -216,7 +216,7 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: auxiliary_kernels_example.runSimulation()
+                on_release: auxiliary_kernels_problem.runSimulation()
 
 <AuxiliaryKernelsSolution>
     name: 'auxiliary_kernels_solution'
@@ -251,5 +251,5 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: auxiliary_kernels_example.runSimulation()
+                on_release: auxiliary_kernels_solution.runSimulation()
 """, filename = "auxiliaryKernels.kv")

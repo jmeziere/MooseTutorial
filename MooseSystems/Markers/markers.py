@@ -215,7 +215,7 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: markers_example.runSimulation()
+                on_release: markers_problem.runSimulation()
 
 <MarkersSolution>
     name: 'markers_solution'
@@ -250,6 +250,5 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: markers_example.runSimulation()
-
+                on_release: markers_solution.runSimulation()
 """, filename = "markers.kv")

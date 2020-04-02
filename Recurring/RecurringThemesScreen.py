@@ -4,9 +4,9 @@ from kivy.lang import Builder
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "InputFiles"))
 import inputFiles
-sys.path.append(os.path.join(os.path.dirname(__file__), "HFiles"))
-import cFiles
 sys.path.append(os.path.join(os.path.dirname(__file__), "CFiles"))
+import cFiles
+sys.path.append(os.path.join(os.path.dirname(__file__), "HFiles"))
 import hFiles
 
 Builder.load_string("""

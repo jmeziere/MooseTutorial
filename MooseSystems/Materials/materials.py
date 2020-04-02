@@ -215,7 +215,7 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: materials_example.runSimulation()
+                on_release: materials_problem.runSimulation()
 
 <MaterialsSolution>
     name: 'materials_solution'
@@ -250,5 +250,5 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: materials_example.runSimulation()
+                on_release: materials_solution.runSimulation()
 """, filename = "materials.kv")

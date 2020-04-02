@@ -157,6 +157,18 @@ ScreenManager:
                         Fedora:
                             # mac
                         # Prerequisites
+                            # Finite Element Method
+                        FiniteElementMethodOverview:
+                        FiniteElementMethodExample:
+                        FiniteElementMethodResources:
+                            # Functional Analysis
+                        FunctionalAnalysisOverview:
+                        FunctionalAnalysisExample:
+                        FunctionalAnalysisResources:
+                            # Weak Form
+                        WeakFormOverview:
+                        WeakFormExample:
+                        WeakFormResources:
                         # Recurring Themes
                             # Input Files
                         InputFilesOverview:

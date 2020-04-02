@@ -215,7 +215,7 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: dampers_example.runSimulation()
+                on_release: dampers_problem.runSimulation()
 
 <DampersSolution>
     name: 'dampers_solution'
@@ -250,5 +250,5 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: dampers_example.runSimulation()
+                on_release: dampers_solution.runSimulation()
 """, filename = "dampers.kv")

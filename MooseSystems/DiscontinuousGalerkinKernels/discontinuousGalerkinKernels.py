@@ -215,7 +215,7 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: discontinuous_galerkin_kernels_example.runSimulation()
+                on_release: discontinuous_galerkin_kernels_problem.runSimulation()
 
 <DiscontinuousGalerkinKernelsSolution>
     name: 'discontinuous_galerkin_kernels_solution'
@@ -250,5 +250,5 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: discontinuous_galerkin_kernels_example.runSimulation()
+                on_release: discontinuous_galerkin_kernels_solution.runSimulation()
 """, filename = "discontinuousGalerkinKernels.kv")

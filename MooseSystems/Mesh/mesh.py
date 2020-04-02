@@ -217,7 +217,7 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: mesh_example.runSimulation()
+                on_release: mesh_problem.runSimulation()
 
 <MeshSolution>
     name: 'mesh_solution'
@@ -252,5 +252,5 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: mesh_example.runSimulation()
+                on_release: mesh_solution.runSimulation()
 """, filename = "mesh.kv")

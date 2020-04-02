@@ -215,7 +215,7 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: indicators_example.runSimulation()
+                on_release: indicators_problem.runSimulation()
 
 <IndicatorsSolution>
     name: 'indicators_solution'
@@ -250,5 +250,5 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: indicators_example.runSimulation()
+                on_release: indicators_solution.runSimulation()
 """, filename = "indicators.kv")

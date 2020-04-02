@@ -22,7 +22,7 @@ class InputFilesExample(Screen):
         return height
 
     def runSimulation(self):
-        _thread.start_new_thread(commonMethods.runSimulation,('projects/moose/tutorials/darcy_thermo_mech/step01_diffusion/problems/step1.i',))
+        _thread.start_new_thread(commonMethods.runSimulation,("""Enter your input file here""",))
 
 class InputFilesProblem(Screen):
     def addText(self, width):
@@ -32,6 +32,9 @@ class InputFilesProblem(Screen):
             b_layout.add_widget(label)
         return height
 
+    def runSimulation(self):
+        _thread.start_new_thread(commonMethods.runSimulation,("""Enter your input file here""",))
+
 class InputFilesSolution(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
@@ -39,6 +42,9 @@ class InputFilesSolution(Screen):
         for label in new_labels:
             b_layout.add_widget(label)
         return height
+
+    def runSimulation(self):
+        _thread.start_new_thread(commonMethods.runSimulation,("""Enter your input file here""",))
 
 Builder.load_string("""
 <InputFilesOverview>
@@ -61,7 +67,7 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'input_files_member_variables'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'input_files_example'
             Button:
                 size_hint: None, None
                 height: 50
@@ -95,7 +101,7 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'input_files_member_functions'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'input_files_overview'
             Button:
                 size_hint: None, None
                 height: 50
@@ -137,6 +143,7 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
+                on_release: input_files_problem.runSimulation()
 
 <InputFilesSolution>
     name: 'input_files_solution'
@@ -171,4 +178,5 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
+                on_release: input_files_solution.runSimulation()
 """, filename = "inputFiles.kv")

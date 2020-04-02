@@ -215,7 +215,7 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: functions_example.runSimulation()
+                on_release: functions_problem.runSimulation()
 
 <FunctionsSolution>
     name: 'functions_solution'
@@ -250,5 +250,5 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: functions_example.runSimulation()
+                on_release: functions_solution.runSimulation()
 """, filename = "functions.kv")

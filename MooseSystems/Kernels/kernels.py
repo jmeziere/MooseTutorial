@@ -217,7 +217,7 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: kernels_example.runSimulation()
+                on_release: kernels_problem.runSimulation()
 
 <KernelsSolution>
     name: 'kernels_solution'
@@ -252,5 +252,5 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: kernels_example.runSimulation()
+                on_release: kernels_solution.runSimulation()
 """, filename = "kernels.kv")

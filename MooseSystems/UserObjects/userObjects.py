@@ -38,7 +38,7 @@ class UserObjectsExample(Screen):
         return height
 
     def runSimulation(self):
-        _thread.start_new_thread(commonMethods.runSimulation,('projects/moose/tutorials/darcy_thermo_mech/step01_diffusion/problems/step1.i',))
+        _thread.start_new_thread(commonMethods.runSimulation,("""Enter your input file here""",))
 
 class UserObjectsProblem(Screen):
     def addText(self, width):
@@ -48,6 +48,9 @@ class UserObjectsProblem(Screen):
             b_layout.add_widget(label)
         return height
 
+    def runSimulation(self):
+        _thread.start_new_thread(commonMethods.runSimulation,("""Enter your input file here""",))
+
 class UserObjectsSolution(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
@@ -55,6 +58,9 @@ class UserObjectsSolution(Screen):
         for label in new_labels:
             b_layout.add_widget(label)
         return height
+
+    def runSimulation(self):
+        _thread.start_new_thread(commonMethods.runSimulation,("""Enter your input file here""",))
 
 Builder.load_string("""
 <UserObjectsOverview>
@@ -209,6 +215,7 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
+                on_release: user_objects_problem.runSimulation()
 
 <UserObjectsSolution>
     name: 'user_objects_solution'
@@ -243,4 +250,5 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
+                on_release: user_objects_solution.runSimulation()
 """, filename = "userObjects.kv")

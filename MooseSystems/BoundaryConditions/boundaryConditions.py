@@ -217,7 +217,7 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: boundary_conditions_example.runSimulation()
+                on_release: boundary_conditions_problem.runSimulation()
 
 <BoundaryConditionsSolution>
     name: 'boundary_conditions_solution'
@@ -252,5 +252,5 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: boundary_conditions_example.runSimulation()
+                on_release: boundary_conditions_solution.runSimulation()
 """, filename = "boundaryConditions.kv")

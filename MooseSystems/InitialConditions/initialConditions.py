@@ -215,7 +215,7 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: initial_conditions_example.runSimulation()
+                on_release: initial_conditions_problem.runSimulation()
 
 <InitialConditionsSolution>
     name: 'initial_conditions_solution'
@@ -250,5 +250,5 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: initial_conditions_example.runSimulation()
+                on_release: initial_conditions_solution.runSimulation()
 """, filename = "initialConditions.kv")

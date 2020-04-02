@@ -215,7 +215,7 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: executioner_example.runSimulation()
+                on_release: executioner_problem.runSimulation()
 
 <ExecutionerSolution>
     name: 'executioner_solution'
@@ -250,5 +250,5 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: executioner_example.runSimulation()
+                on_release: executioner_solution.runSimulation()
 """, filename = "executioner.kv")

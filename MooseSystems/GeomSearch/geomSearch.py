@@ -215,7 +215,7 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: geom_search_example.runSimulation()
+                on_release: geom_search_problem.runSimulation()
 
 <GeomSearchSolution>
     name: 'geom_search_solution'
@@ -250,5 +250,5 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: geom_search_example.runSimulation()
+                on_release: geom_search_solution.runSimulation()
 """, filename = "geomSearch.kv")

@@ -215,7 +215,7 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: mesh_modifiers_example.runSimulation()
+                on_release: mesh_modifiers_problem.runSimulation()
 
 <MeshModifiersSolution>
     name: 'mesh_modifiers_solution'
@@ -250,5 +250,5 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: mesh_modifiers_example.runSimulation()
+                on_release: mesh_modifiers_solution.runSimulation()
 """, filename = "meshModifiers.kv")
