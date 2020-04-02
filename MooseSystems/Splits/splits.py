@@ -5,34 +5,34 @@ from kivy.lang import Builder
 import os
 import _thread
 
-class ActionsOverview(Screen):
+class SplitsOverview(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'actionsOverview', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'splitsOverview', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
-class ActionsMemberVariables(Screen):
+class SplitsMemberVariables(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'actionsMemberVariables', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'splitsMemberVariables', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
-class ActionsMemberFunctions(Screen):
+class SplitsMemberFunctions(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'actionsMemberFunction', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'splitsMemberFunction', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
-class ActionsExample(Screen):
+class SplitsExample(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'actionsExample', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'splitsExample', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
@@ -40,26 +40,26 @@ class ActionsExample(Screen):
     def runSimulation(self):
         _thread.start_new_thread(commonMethods.runSimulation,('projects/moose/tutorials/darcy_thermo_mech/step01_diffusion/problems/step1.i',))
 
-class ActionsProblem(Screen):
+class SplitsProblem(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'actionsProblem', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'splitsProblem', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
-class ActionsSolution(Screen):
+class SplitsSolution(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'actionsSolution', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'splitsSolution', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
 Builder.load_string("""
-<ActionsOverview>
-    name: 'actions_overview'
-    id: actions_overview
+<SplitsOverview>
+    name: 'splits_overview'
+    id: splits_overview
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -67,7 +67,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: actions_overview.addText(root.width)
+                height: splits_overview.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -77,7 +77,7 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_member_variables'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'splits_member_variables'
             Button:
                 size_hint: None, None
                 height: 50
@@ -85,9 +85,9 @@ Builder.load_string("""
                 text: 'Previous'
                 background_color: 0,0,0,1
 
-<ActionsMemberVariables>
-    name: 'actions_member_variables'
-    id: actions_member_variables
+<SplitsMemberVariables>
+    name: 'splits_member_variables'
+    id: splits_member_variables
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -95,7 +95,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: actions_member_variables.addText(root.width)
+                height: splits_member_variables.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -105,17 +105,17 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_member_functions'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'splits_member_functions'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_overview'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'splits_overview'
 
-<ActionsMemberFunctions>
-    name: 'actions_member_functions'
-    id: actions_member_functions
+<SplitsMemberFunctions>
+    name: 'splits_member_functions'
+    id: splits_member_functions
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -123,7 +123,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: actions_member_functions.addText(root.width)
+                height: splits_member_functions.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -133,17 +133,17 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_example'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'splits_example'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_member_variables'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'splits_member_variables'
 
-<ActionsExample>
-    name: 'actions_example'
-    id: actions_example
+<SplitsExample>
+    name: 'splits_example'
+    id: splits_example
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -151,7 +151,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: actions_example.addText(root.width)
+                height: splits_example.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -161,24 +161,24 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_problem'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'splits_problem'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_member_functions'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'splits_member_functions'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: actions_example.runSimulation()
+                on_release: splits_example.runSimulation()
 
-<ActionsProblem>
-    name: 'actions_problem'
-    id: actions_problem
+<SplitsProblem>
+    name: 'splits_problem'
+    id: splits_problem
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -186,7 +186,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: actions_problem.addText(root.width)
+                height: splits_problem.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -196,13 +196,13 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_solution'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'splits_solution'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_example'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'splits_example'
             Button:
                 size_hint: None, None
                 height: 50
@@ -210,9 +210,9 @@ Builder.load_string("""
                 text: 'Run\\nSimulation'
                 halign: 'center'
 
-<ActionsSolution>
-    name: 'actions_solution'
-    id: actions_solution
+<SplitsSolution>
+    name: 'splits_solution'
+    id: splits_solution
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -220,7 +220,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: actions_solution.addText(root.width)
+                height: splits_solution.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -236,11 +236,11 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_problem'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'splits_problem'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-""", filename = "actions.kv")
+""", filename = "splits.kv")

@@ -5,34 +5,34 @@ from kivy.lang import Builder
 import os
 import _thread
 
-class ActionsOverview(Screen):
+class InitialConditionsOverview(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'actionsOverview', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'initialConditionsOverview', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
-class ActionsMemberVariables(Screen):
+class InitialConditionsMemberVariables(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'actionsMemberVariables', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'initialConditionsMemberVariables', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
-class ActionsMemberFunctions(Screen):
+class InitialConditionsMemberFunctions(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'actionsMemberFunction', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'initialConditionsMemberFunction', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
-class ActionsExample(Screen):
+class InitialConditionsExample(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'actionsExample', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'initialConditionsExample', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
@@ -40,26 +40,26 @@ class ActionsExample(Screen):
     def runSimulation(self):
         _thread.start_new_thread(commonMethods.runSimulation,('projects/moose/tutorials/darcy_thermo_mech/step01_diffusion/problems/step1.i',))
 
-class ActionsProblem(Screen):
+class InitialConditionsProblem(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'actionsProblem', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'initialConditionsProblem', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
-class ActionsSolution(Screen):
+class InitialConditionsSolution(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'actionsSolution', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'initialConditionsSolution', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
 Builder.load_string("""
-<ActionsOverview>
-    name: 'actions_overview'
-    id: actions_overview
+<InitialConditionsOverview>
+    name: 'initial_conditions_overview'
+    id: initial_conditions_overview
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -67,7 +67,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: actions_overview.addText(root.width)
+                height: initial_conditions_overview.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -77,7 +77,7 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_member_variables'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'initial_conditions_member_variables'
             Button:
                 size_hint: None, None
                 height: 50
@@ -85,9 +85,9 @@ Builder.load_string("""
                 text: 'Previous'
                 background_color: 0,0,0,1
 
-<ActionsMemberVariables>
-    name: 'actions_member_variables'
-    id: actions_member_variables
+<InitialConditionsMemberVariables>
+    name: 'initial_conditions_member_variables'
+    id: initial_conditions_member_variables
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -95,7 +95,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: actions_member_variables.addText(root.width)
+                height: initial_conditions_member_variables.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -105,17 +105,17 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_member_functions'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'initial_conditions_member_functions'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_overview'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'initial_conditions_overview'
 
-<ActionsMemberFunctions>
-    name: 'actions_member_functions'
-    id: actions_member_functions
+<InitialConditionsMemberFunctions>
+    name: 'initial_conditions_member_functions'
+    id: initial_conditions_member_functions
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -123,7 +123,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: actions_member_functions.addText(root.width)
+                height: initial_conditions_member_functions.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -133,17 +133,17 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_example'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'initial_conditions_example'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_member_variables'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'initial_conditions_member_variables'
 
-<ActionsExample>
-    name: 'actions_example'
-    id: actions_example
+<InitialConditionsExample>
+    name: 'initial_conditions_example'
+    id: initial_conditions_example
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -151,7 +151,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: actions_example.addText(root.width)
+                height: initial_conditions_example.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -161,24 +161,24 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_problem'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'initial_conditions_problem'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_member_functions'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'initial_conditions_member_functions'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: actions_example.runSimulation()
+                on_release: initial_conditions_example.runSimulation()
 
-<ActionsProblem>
-    name: 'actions_problem'
-    id: actions_problem
+<InitialConditionsProblem>
+    name: 'initial_conditions_problem'
+    id: initial_conditions_problem
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -186,7 +186,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: actions_problem.addText(root.width)
+                height: initial_conditions_problem.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -196,13 +196,13 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_solution'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'initial_conditions_solution'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_example'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'initial_conditions_example'
             Button:
                 size_hint: None, None
                 height: 50
@@ -210,9 +210,9 @@ Builder.load_string("""
                 text: 'Run\\nSimulation'
                 halign: 'center'
 
-<ActionsSolution>
-    name: 'actions_solution'
-    id: actions_solution
+<InitialConditionsSolution>
+    name: 'initial_conditions_solution'
+    id: initial_conditions_solution
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -220,7 +220,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: actions_solution.addText(root.width)
+                height: initial_conditions_solution.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -236,11 +236,11 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'actions_problem'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'initial_conditions_problem'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-""", filename = "actions.kv")
+""", filename = "initialConditions.kv")
