@@ -1,3 +1,3 @@
-Action Example
+Auxiliary Kernel Example
 
 This page needs development.

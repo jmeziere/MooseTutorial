@@ -1,3 +1,3 @@
-Action Member Functions & Class Types
+Auxiliary Variable Member Functions & Class Types
 
 This page needs development.
