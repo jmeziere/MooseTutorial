@@ -38,7 +38,7 @@ class MeshModifiersExample(Screen):
         return height
 
     def runSimulation(self):
-        _thread.start_new_thread(commonMethods.runSimulation,('projects/moose/tutorials/darcy_thermo_mech/step01_diffusion/problems/step1.i',))
+        _thread.start_new_thread(commonMethods.runSimulation,("""Enter your input file here""",))
 
 class MeshModifiersProblem(Screen):
     def addText(self, width):
@@ -48,6 +48,9 @@ class MeshModifiersProblem(Screen):
             b_layout.add_widget(label)
         return height
 
+    def runSimulation(self):
+        _thread.start_new_thread(commonMethods.runSimulation,("""Enter your input file here""",))
+
 class MeshModifiersSolution(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
@@ -55,6 +58,9 @@ class MeshModifiersSolution(Screen):
         for label in new_labels:
             b_layout.add_widget(label)
         return height
+
+    def runSimulation(self):
+        _thread.start_new_thread(commonMethods.runSimulation,("""Enter your input file here""",))
 
 Builder.load_string("""
 <MeshModifiersOverview>
@@ -209,6 +215,7 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
+                on_release: mesh_modifiers_example.runSimulation()
 
 <MeshModifiersSolution>
     name: 'mesh_modifiers_solution'
@@ -220,8 +227,8 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: mesh_modifiers_solution.addText(root.width)
         StackLayout:
+        height: mesh_modifiers_solution.addText(root.width)
             orientation: 'rl-bt'
             size_hint_y: None
             height: 50
@@ -243,4 +250,5 @@ Builder.load_string("""
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
+                on_release: mesh_modifiers_example.runSimulation()
 """, filename = "meshModifiers.kv")
