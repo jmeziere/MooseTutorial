@@ -227,8 +227,8 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
+                height: mesh_modifiers_solution.addText(root.width)
         StackLayout:
-        height: mesh_modifiers_solution.addText(root.width)
             orientation: 'rl-bt'
             size_hint_y: None
             height: 50
