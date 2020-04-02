@@ -2,6 +2,7 @@ from kivy.uix.screenmanager import Screen
 import os
 import subprocess
 from kivy.lang import Builder
+import _thread
 
 class Ubuntu16_04(Screen):
     def install(self):
@@ -30,6 +31,7 @@ class Ubuntu16_04(Screen):
         os.system("cd ~/projects/moose/test; make -j 4; ./run_tests -j 4")
 
 Builder.load_string("""
+#:import th _thread
 <Ubuntu16_04>
     name: 'Ubuntu16_04'
     id: 'Ubuntu16_04'
@@ -43,11 +45,11 @@ Builder.load_string("""
         pos:50 , 300
         height: 30
         size_hint: (.2, None)
-        on_release: root.install()
+        on_release: th.start_new_thread(root.install,())
     Button:
         text: "Second Part of Installation"
         pos:50 , 250
         height: 30
         size_hint: (.2, None)
-        on_release: root.install_too()
+        on_release: th.start_new_thread(root.install_too,())
 """, filename = "Ubuntu16_04.kv")
