@@ -13,7 +13,7 @@ Builder.load_string("""
             id: fem_button
             size_hint_y: None
             height: 30
-            text: 'Finite Element Overview'
+            text: 'Finite Element Method'
             background_color: 0,0,0,1
             on_press: fem_button.background_color = [1,1,1,1]
             on_release: App.get_running_app().root.ids.sub_sections.width = 0

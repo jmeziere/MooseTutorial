@@ -163,6 +163,16 @@ ScreenManager:
                         InputFilesExample:
                         InputFilesProblem:
                         InputFilesSolution:
+                            # C Files
+                        CFilesOverview
+                        CFilesExample:
+                        CFilesProblem:
+                        CFilesSolution:
+                            # H Files
+                        HFilesOverview
+                        HFilesExample:
+                        HFilesProblem:
+                        HFilesSolution:
                         # MOOSE Systems
                             # Actions
                         ActionsOverview:

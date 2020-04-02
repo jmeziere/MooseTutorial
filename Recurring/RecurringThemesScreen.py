@@ -3,7 +3,11 @@ import os
 from kivy.lang import Builder
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "InputFiles"))
-import InputFilesOverview
+import inputFiles
+sys.path.append(os.path.join(os.path.dirname(__file__), "HFiles"))
+import cFiles
+sys.path.append(os.path.join(os.path.dirname(__file__), "CFiles"))
+import hFiles
 
 Builder.load_string("""
 <RecurringThemesScreen@Screen>
@@ -34,7 +38,7 @@ Builder.load_string("""
             on_release: App.get_running_app().root.ids.sub_sections.width = 0
             on_release: App.get_running_app().root.ids.recurring_themes_button.background_color = [0,0,0,1]
             on_release: c_files_button.background_color = [0,0,0,1]
-            on_release: App.get_running_app().root.ids.tutorial_manager.current = 'needs_work'
+            on_release: App.get_running_app().root.ids.tutorial_manager.current = 'c_files_overview'
         Button:
             id: h_files_button
             size_hint_y: None
@@ -45,5 +49,5 @@ Builder.load_string("""
             on_release: App.get_running_app().root.ids.sub_sections.width = 0
             on_release: App.get_running_app().root.ids.recurring_themes_button.background_color = [0,0,0,1]
             on_release: h_files_button.background_color = [0,0,0,1]
-            on_release: App.get_running_app().root.ids.tutorial_manager.current = 'needs_work'
+            on_release: App.get_running_app().root.ids.tutorial_manager.current = 'h_files_overview'
 """, filename = "RecurringThemesScreen.kv")
