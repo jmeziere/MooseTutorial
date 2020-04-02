@@ -290,6 +290,13 @@ ScreenManager:
                         MaterialsExample:
                         MaterialsProblem:
                         MaterialsSolution:
+                            # Mesh
+                        MeshOverview:
+                        MeshMemberVariables:
+                        MeshMemberFunctions:
+                        MeshExample:
+                        MeshProblem:
+                        MeshSolution:
                             # MeshModifiers
                         MeshModifiersOverview:
                         MeshModifiersMemberVariables:

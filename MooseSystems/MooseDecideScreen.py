@@ -18,8 +18,8 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "Dampers"))
 import dampers
 sys.path.append(os.path.join(os.path.dirname(__file__), "DiracKernels"))
 import diracKernels
-sys.path.append(os.path.join(os.path.dirname(__file__), "DiscontinousGalerkinKernels"))
-import discontinousGalerkinKernels
+sys.path.append(os.path.join(os.path.dirname(__file__), "DiscontinuousGalerkinKernels"))
+import discontinuousGalerkinKernels
 sys.path.append(os.path.join(os.path.dirname(__file__), "Executioner"))
 import executioner
 sys.path.append(os.path.join(os.path.dirname(__file__), "Functions"))
@@ -123,7 +123,7 @@ Builder.load_string("""
                 on_release: App.get_running_app().root.ids.sub_sections.width = 0
                 on_release: App.get_running_app().root.ids.moose_systems_button.background_color = [0,0,0,1]
                 on_release: bc_button.background_color = [0,0,0,1]
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'boudary_conditions_overview'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'boundary_conditions_overview'
             Button:
                 id: constraint_button
                 size_hint_y: None
@@ -156,7 +156,7 @@ Builder.load_string("""
                 on_release: App.get_running_app().root.ids.sub_sections.width = 0
                 on_release: App.get_running_app().root.ids.moose_systems_button.background_color = [0,0,0,1]
                 on_release: damper_button.background_color = [0,0,0,1]
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'damper_overview'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'dampers_overview'
             Button:
                 id: dg_ker_button
                 size_hint_y: None
@@ -167,7 +167,7 @@ Builder.load_string("""
                 on_release: App.get_running_app().root.ids.sub_sections.width = 0
                 on_release: App.get_running_app().root.ids.moose_systems_button.background_color = [0,0,0,1]
                 on_release: dg_ker_button.background_color = [0,0,0,1]
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'discontinous_galerkin_kernels_overview'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'discontinuous_galerkin_kernels_overview'
             Button:
                 id: dirac_ker_button
                 size_hint_y: None
@@ -229,10 +229,10 @@ Builder.load_string("""
                 height: 30
                 text: 'Initial Conditions'
                 background_color: 0,0,0,1
-                on_press: aux_button.background_color = [1,1,1,1]
+                on_press: ic_button.background_color = [1,1,1,1]
                 on_release: App.get_running_app().root.ids.sub_sections.width = 0
                 on_release: App.get_running_app().root.ids.moose_systems_button.background_color = [0,0,0,1]
-                on_release: aux_button.background_color = [0,0,0,1]
+                on_release: ic_button.background_color = [0,0,0,1]
                 on_release: App.get_running_app().root.ids.tutorial_manager.current = 'initial_conditions_overview'
             Button:
                 id: int_ker_button
@@ -343,7 +343,7 @@ Builder.load_string("""
                 on_release: App.get_running_app().root.ids.sub_sections.width = 0
                 on_release: App.get_running_app().root.ids.moose_systems_button.background_color = [0,0,0,1]
                 on_release: preconditioner_button.background_color = [0,0,0,1]
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'preconditionss_overview'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'preconditioners_overview'
             Button:
                 id: predictor_button
                 size_hint_y: None

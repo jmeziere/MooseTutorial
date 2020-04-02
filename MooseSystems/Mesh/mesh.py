@@ -5,34 +5,34 @@ from kivy.lang import Builder
 import os
 import _thread
 
-class MeshsOverview(Screen):
+class MeshOverview(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'meshsOverview', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'meshOverview', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
-class MeshsMemberVariables(Screen):
+class MeshMemberVariables(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'meshsMemberVariables', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'meshMemberVariables', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
-class MeshsMemberFunctions(Screen):
+class MeshMemberFunctions(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'meshsMemberFunction', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'meshMemberFunction', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
-class MeshsExample(Screen):
+class MeshExample(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'meshsExample', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'meshExample', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
@@ -40,26 +40,26 @@ class MeshsExample(Screen):
     def runSimulation(self):
         _thread.start_new_thread(commonMethods.runSimulation,('projects/moose/tutorials/darcy_thermo_mech/step01_diffusion/problems/step1.i',))
 
-class MeshsProblem(Screen):
+class MeshProblem(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'meshsProblem', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'meshProblem', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
-class MeshsSolution(Screen):
+class MeshSolution(Screen):
     def addText(self, width):
         b_layout = self.ids.tester
-        (new_labels, height) = commonMethods.niceLayout(width,'meshsSolution', os.path.dirname(__file__))
+        (new_labels, height) = commonMethods.niceLayout(width,'meshSolution', os.path.dirname(__file__))
         for label in new_labels:
             b_layout.add_widget(label)
         return height
 
 Builder.load_string("""
-<MeshsOverview>
-    name: 'meshs_overview'
-    id: meshs_overview
+<MeshOverview>
+    name: 'mesh_overview'
+    id: mesh_overview
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -67,7 +67,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: meshs_overview.addText(root.width)
+                height: mesh_overview.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -77,7 +77,7 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'meshs_member_variables'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'mesh_member_variables'
             Button:
                 size_hint: None, None
                 height: 50
@@ -85,9 +85,9 @@ Builder.load_string("""
                 text: 'Previous'
                 background_color: 0,0,0,1
 
-<MeshsMemberVariables>
-    name: 'meshs_member_variables'
-    id: meshs_member_variables
+<MeshMemberVariables>
+    name: 'mesh_member_variables'
+    id: mesh_member_variables
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -95,7 +95,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: meshs_member_variables.addText(root.width)
+                height: mesh_member_variables.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -105,17 +105,17 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'meshs_member_functions'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'mesh_member_functions'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'meshs_overview'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'mesh_overview'
 
-<MeshsMemberFunctions>
-    name: 'meshs_member_functions'
-    id: meshs_member_functions
+<MeshMemberFunctions>
+    name: 'mesh_member_functions'
+    id: mesh_member_functions
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -123,7 +123,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: meshs_member_functions.addText(root.width)
+                height: mesh_member_functions.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -133,17 +133,17 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'meshs_example'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'mesh_example'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'meshs_member_variables'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'mesh_member_variables'
 
-<MeshsExample>
-    name: 'meshs_example'
-    id: meshs_example
+<MeshExample>
+    name: 'mesh_example'
+    id: mesh_example
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -151,7 +151,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: meshs_example.addText(root.width)
+                height: mesh_example.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -161,24 +161,24 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'meshs_problem'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'mesh_problem'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'meshs_member_functions'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'mesh_member_functions'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-                on_release: meshs_example.runSimulation()
+                on_release: mesh_example.runSimulation()
 
-<MeshsProblem>
-    name: 'meshs_problem'
-    id: meshs_problem
+<MeshProblem>
+    name: 'mesh_problem'
+    id: mesh_problem
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -186,7 +186,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: meshs_problem.addText(root.width)
+                height: mesh_problem.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -196,13 +196,13 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Next'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'meshs_solution'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'mesh_solution'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'meshs_example'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'mesh_example'
             Button:
                 size_hint: None, None
                 height: 50
@@ -210,9 +210,9 @@ Builder.load_string("""
                 text: 'Run\\nSimulation'
                 halign: 'center'
 
-<MeshsSolution>
-    name: 'meshs_solution'
-    id: meshs_solution
+<MeshSolution>
+    name: 'mesh_solution'
+    id: mesh_solution
     BoxLayout:
         orientation: 'vertical'
         ScrollView:
@@ -220,7 +220,7 @@ Builder.load_string("""
                 id: tester
                 orientation: 'vertical'
                 size_hint_y: None
-                height: meshs_solution.addText(root.width)
+                height: mesh_solution.addText(root.width)
         StackLayout:
             orientation: 'rl-bt'
             size_hint_y: None
@@ -236,11 +236,11 @@ Builder.load_string("""
                 height: 50
                 width: 100
                 text: 'Previous'
-                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'meshs_problem'
+                on_release: App.get_running_app().root.ids.tutorial_manager.current = 'mesh_problem'
             Button:
                 size_hint: None, None
                 height: 50
                 width: 100
                 text: 'Run\\nSimulation'
                 halign: 'center'
-""", filename = "meshs.kv")
+""", filename = "mesh.kv")
